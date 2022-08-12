@@ -15,6 +15,7 @@ import java.sql.*;
 import hr_bsit1b_it04_jqjz.jqjzConnect;
 import java.awt.Color;
 
+
 /**
  *
  * @author JLZapanta;
@@ -359,7 +360,7 @@ public class frmLoginJQJZ extends javax.swing.JFrame {
                         strjqjzUserID = (jqjzrs.getString("id"));
                         strjqjzUserName = (jqjzrs.getString("User_name"));
                         strjqjzPassword = (jqjzrs.getString("Password"));
-                        frmMainJQJZ frmMainForm = new frmMainJQJZ();
+                        frmdb frmMainForm = new frmdb();
                         frmMainForm.setVisible(true);
                         this.hide();
                     }
