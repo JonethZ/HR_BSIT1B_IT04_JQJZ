@@ -84,7 +84,7 @@ CREATE TABLE hr_bsit1b_it04_jqjz.tbljqjz_salary (
 CREATE TABLE hr_bsit1b_it04_jqjz.tbljqjz_attendance (
     id INT(11) NOT NULL,
     Att_type VARCHAR(50),
-    Att_time_date DATE,
+    Att_time_date DATETIME,
     Employee_id INT(11),
     PRIMARY KEY (id),
     CONSTRAINT FK_tbljqjz_attendance FOREIGN KEY (Employee_id)
