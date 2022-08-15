@@ -360,8 +360,8 @@ public class frmLoginJQJZ extends javax.swing.JFrame {
                         strjqjzUserID = (jqjzrs.getString("id"));
                         strjqjzUserName = (jqjzrs.getString("User_name"));
                         strjqjzPassword = (jqjzrs.getString("Password"));
-                        frmdb frmMainForm = new frmdb();
-                        frmMainForm.setVisible(true);
+                        frmHomeJQJZ frmHomepage = new frmHomeJQJZ();
+                        frmHomepage.setVisible(true);
                         this.hide();
                     }
                 }
