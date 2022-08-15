@@ -15,6 +15,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import hr_bsit1b_it04_jqjz.jqjzConnect;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -26,7 +27,9 @@ public class frmInputs extends javax.swing.JFrame {
             strjqjzDepID,strjqjzDepTitle,strjqjzTrainID,strjqjzTrainTitle,strjqjzTrainDescription,strjqjzEmpID_vacay,
             strjqjzVacayID,strjqjzVacayTitle,strjqjzVacayFrom,strjqjzVacayTo,strjqjzEmpID_sal,strjqjzSalID,
             strjqjzSal,strjqjzSalBonus,strjqjzSalLoan,strjqjzSalLastUpdate,strjqjzEmpID_attend,strjqjzAttendID,
-            strjqjzAttendType,strjqjzAttendTimeDate,strjqjzEvalID,strjqjzUserID,strjqjzEvalValue;                
+            strjqjzAttendType,strjqjzAttendDateTime,strjqjzEvalID,strjqjzUserID,strjqjzEvalValue,strjqjzUserID_user, 
+            strjqjzUserFName,strjqjzUserMName,strjqjzUserLName,strjqjzUserPass,strjqjzUsername,strjqjzUserGender,
+            strjqjzUserTypeID,strjqjzUserEmail, strjqjzUserType_ID, strjqjzUserType_name, strjqjzUserType_desc;                
     public int jqjznumberOfRows;
     jqjzConnect jqjzC = new jqjzConnect();
     Connection jqjzconn;
@@ -81,9 +84,20 @@ public class frmInputs extends javax.swing.JFrame {
         lblmenu_attend = new javax.swing.JLabel();
         menu_eval = new javax.swing.JPanel();
         lblmenu_eval = new javax.swing.JLabel();
+        menu_user = new javax.swing.JPanel();
+        lblmenu_user = new javax.swing.JLabel();
         toolbar = new javax.swing.JPanel();
+        jPanel_Logout = new javax.swing.JPanel();
+        btnjqjzLogout = new javax.swing.JLabel();
+        jPanel_Input = new javax.swing.JPanel();
+        btnjqjzInput = new javax.swing.JLabel();
+        jPanel_Output = new javax.swing.JPanel();
+        btnjqjzOutput = new javax.swing.JLabel();
+        jPanel_Home = new javax.swing.JPanel();
+        btnjqjzHome = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         kGradientPanel_db = new keeptoo.KGradientPanel();
+        jLabel121 = new javax.swing.JLabel();
         jPanel_emp = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -175,13 +189,13 @@ public class frmInputs extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
-        txtjqjzVacayFrom = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
+        dtpjqjzVacayFrom = new com.github.lgooddatepicker.components.DatePicker();
         jPanel19 = new javax.swing.JPanel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
-        txtjqjzVacayTo = new javax.swing.JPasswordField();
+        dtpjqjzVacayTo = new com.github.lgooddatepicker.components.DatePicker();
         btnjqjzSearch_vacay = new javax.swing.JLabel();
         btnjqjzSave_vacay = new javax.swing.JLabel();
         btnjqjzUpdate_vacay = new javax.swing.JLabel();
@@ -215,7 +229,7 @@ public class frmInputs extends javax.swing.JFrame {
         jPanel24 = new javax.swing.JPanel();
         jLabel64 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
-        txtjqjzSalLastUpdate = new javax.swing.JPasswordField();
+        dtpjqjzSalLastUpdate = new com.github.lgooddatepicker.components.DatePicker();
         btnjqjzSearch_sal = new javax.swing.JLabel();
         btnjqjzSave_sal = new javax.swing.JLabel();
         btnjqjzUpdate_sal = new javax.swing.JLabel();
@@ -227,25 +241,25 @@ public class frmInputs extends javax.swing.JFrame {
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
-        txtjqjzAttendID = new javax.swing.JTextField();
+        txtjqjzEmpID_attend = new javax.swing.JTextField();
         jLabel70 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
-        txtjqjzEmpID_attend = new javax.swing.JTextField();
+        txtjqjzAttendID = new javax.swing.JTextField();
         jLabel72 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
-        txtjqjzAttendType = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
         jLabel77 = new javax.swing.JLabel();
+        txtjqjzAttendType = new javax.swing.JTextField();
         jPanel29 = new javax.swing.JPanel();
-        txtjqjzAttendTimeDate = new javax.swing.JTextField();
         jLabel78 = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
+        txtjqjzAttendDateTime = new javax.swing.JTextField();
         btnjqjzSearch_attend = new javax.swing.JLabel();
         btnjqjzSave_attend = new javax.swing.JLabel();
         btnjqjzUpdate_attend = new javax.swing.JLabel();
-        btnjqjz_attend = new javax.swing.JLabel();
+        btnjqjz_Clear = new javax.swing.JLabel();
         btnjqjzDelete_attend = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
         jPanel_eval = new javax.swing.JPanel();
@@ -270,6 +284,74 @@ public class frmInputs extends javax.swing.JFrame {
         jLabel87 = new javax.swing.JLabel();
         txtjqjzEvalValue = new javax.swing.JTextField();
         jLabel88 = new javax.swing.JLabel();
+        jPanel_user = new javax.swing.JPanel();
+        jLabel89 = new javax.swing.JLabel();
+        jLabel90 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jPanel32 = new javax.swing.JPanel();
+        jPanel34 = new javax.swing.JPanel();
+        txtjqjzUserFName = new javax.swing.JTextField();
+        jLabel96 = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jPanel38 = new javax.swing.JPanel();
+        txtjqjzUserMName = new javax.swing.JTextField();
+        jLabel105 = new javax.swing.JLabel();
+        jLabel106 = new javax.swing.JLabel();
+        jPanel39 = new javax.swing.JPanel();
+        jLabel107 = new javax.swing.JLabel();
+        jLabel108 = new javax.swing.JLabel();
+        pwjqjzUserPass = new javax.swing.JPasswordField();
+        jPanel35 = new javax.swing.JPanel();
+        txtjqjzUsername = new javax.swing.JTextField();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel99 = new javax.swing.JLabel();
+        jPanel36 = new javax.swing.JPanel();
+        txtjqjzUserGender = new javax.swing.JTextField();
+        jLabel100 = new javax.swing.JLabel();
+        jLabel101 = new javax.swing.JLabel();
+        jPanel37 = new javax.swing.JPanel();
+        jLabel102 = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        txtjqjzUserTypeID = new javax.swing.JTextField();
+        jPanel40 = new javax.swing.JPanel();
+        jLabel109 = new javax.swing.JLabel();
+        jLabel110 = new javax.swing.JLabel();
+        txtjqjzUserEmail = new javax.swing.JTextField();
+        btnjqjzSearch_user = new javax.swing.JLabel();
+        btnjqjzSave_user = new javax.swing.JLabel();
+        btnjqjzUpdate_user = new javax.swing.JLabel();
+        btnjqjzClear_user = new javax.swing.JLabel();
+        btnjqjzDelete_user = new javax.swing.JLabel();
+        jLabel104 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel94 = new javax.swing.JLabel();
+        txtjqjzUserID_user = new javax.swing.JTextField();
+        jLabel92 = new javax.swing.JLabel();
+        txtjqjzUserLName = new javax.swing.JTextField();
+        jLabel93 = new javax.swing.JLabel();
+        btnjqjz_usertype = new javax.swing.JLabel();
+        jPanel_usertype = new javax.swing.JPanel();
+        jLabel111 = new javax.swing.JLabel();
+        jLabel112 = new javax.swing.JLabel();
+        jLabel113 = new javax.swing.JLabel();
+        jLabel114 = new javax.swing.JLabel();
+        jPanel33 = new javax.swing.JPanel();
+        jLabel115 = new javax.swing.JLabel();
+        txtjqjzUserType_ID = new javax.swing.JTextField();
+        jLabel116 = new javax.swing.JLabel();
+        jPanel41 = new javax.swing.JPanel();
+        jLabel117 = new javax.swing.JLabel();
+        txtjqjzUserType_name = new javax.swing.JTextField();
+        jLabel118 = new javax.swing.JLabel();
+        btnjqjzSearch_usertype = new javax.swing.JLabel();
+        btnjqjzSave_usertype = new javax.swing.JLabel();
+        btnjqjzClear_usertype = new javax.swing.JLabel();
+        btnjqjzUpdate_usertype = new javax.swing.JLabel();
+        btnjqjzDelete_usertype = new javax.swing.JLabel();
+        jPanel42 = new javax.swing.JPanel();
+        jLabel119 = new javax.swing.JLabel();
+        txtjqjzUserType_desc = new javax.swing.JTextField();
+        jLabel120 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1366, 768));
@@ -289,34 +371,11 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        menu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 255, -1));
-
         menu_db.setBackground(new java.awt.Color(235, 218, 204));
 
+        lblmenu_db.setText("INPUT DASHBOARD");
         lblmenu_db.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblmenu_db.setForeground(new java.awt.Color(153, 102, 0));
-        lblmenu_db.setText("INPUT DASHBOARD");
         lblmenu_db.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_dbMouseClicked(evt);
@@ -347,19 +406,17 @@ public class frmInputs extends javax.swing.JFrame {
         menu_dbLayout.setVerticalGroup(
             menu_dbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_dbLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(17, 17, 17)
                 .addComponent(lblmenu_db)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
-
-        menu.add(menu_db, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 320, 70));
 
         menu_emp.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_emp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblmenu_emp.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_emp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/emp.png"))); // NOI18N
         lblmenu_emp.setText("   EMPLOYEE");
+        lblmenu_emp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblmenu_emp.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_empMouseClicked(evt);
@@ -392,17 +449,15 @@ public class frmInputs extends javax.swing.JFrame {
             .addGroup(menu_empLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(lblmenu_emp)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
-
-        menu.add(menu_emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 320, 70));
 
         menu_dep.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_dep.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblmenu_dep.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_dep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/dept.png"))); // NOI18N
         lblmenu_dep.setText("   DEPARTMENT ");
+        lblmenu_dep.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblmenu_dep.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_depMouseClicked(evt);
@@ -433,19 +488,17 @@ public class frmInputs extends javax.swing.JFrame {
         menu_depLayout.setVerticalGroup(
             menu_depLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_depLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(17, 17, 17)
                 .addComponent(lblmenu_dep)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
-
-        menu.add(menu_dep, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 320, 70));
 
         menu_train.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_train.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblmenu_train.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_train.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/train.png"))); // NOI18N
         lblmenu_train.setText("   TRAINING");
+        lblmenu_train.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblmenu_train.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_train.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_trainMouseClicked(evt);
@@ -476,19 +529,17 @@ public class frmInputs extends javax.swing.JFrame {
         menu_trainLayout.setVerticalGroup(
             menu_trainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_trainLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addComponent(lblmenu_train)
                 .addGap(17, 17, 17))
         );
 
-        menu.add(menu_train, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 320, 70));
-
         menu_vacay.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_vacay.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblmenu_vacay.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_vacay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/vacay.png"))); // NOI18N
         lblmenu_vacay.setText("   VACATION");
+        lblmenu_vacay.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblmenu_vacay.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_vacayMouseClicked(evt);
@@ -519,19 +570,17 @@ public class frmInputs extends javax.swing.JFrame {
         menu_vacayLayout.setVerticalGroup(
             menu_vacayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_vacayLayout.createSequentialGroup()
-                .addGap(0, 19, Short.MAX_VALUE)
+                .addGap(0, 16, Short.MAX_VALUE)
                 .addComponent(lblmenu_vacay)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 17, Short.MAX_VALUE))
         );
-
-        menu.add(menu_vacay, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 320, 70));
 
         menu_salary.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_salary.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblmenu_salary.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_salary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/cash.png"))); // NOI18N
         lblmenu_salary.setText("   SALARY");
+        lblmenu_salary.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblmenu_salary.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_salary.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_salaryMouseClicked(evt);
@@ -562,19 +611,17 @@ public class frmInputs extends javax.swing.JFrame {
         menu_salaryLayout.setVerticalGroup(
             menu_salaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_salaryLayout.createSequentialGroup()
-                .addGap(0, 19, Short.MAX_VALUE)
+                .addGap(0, 16, Short.MAX_VALUE)
                 .addComponent(lblmenu_salary)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 17, Short.MAX_VALUE))
         );
-
-        menu.add(menu_salary, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 320, 70));
 
         menu_attend.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_attend.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblmenu_attend.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_attend.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/attend.png"))); // NOI18N
         lblmenu_attend.setText("   ATTENDANCE");
+        lblmenu_attend.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblmenu_attend.setForeground(new java.awt.Color(153, 102, 0));
         lblmenu_attend.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_attendMouseClicked(evt);
@@ -605,19 +652,17 @@ public class frmInputs extends javax.swing.JFrame {
         menu_attendLayout.setVerticalGroup(
             menu_attendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_attendLayout.createSequentialGroup()
-                .addGap(0, 19, Short.MAX_VALUE)
+                .addGap(0, 16, Short.MAX_VALUE)
                 .addComponent(lblmenu_attend)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 17, Short.MAX_VALUE))
         );
-
-        menu.add(menu_attend, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 320, 70));
 
         menu_eval.setBackground(new java.awt.Color(235, 218, 204));
 
+        lblmenu_eval.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/eval.png"))); // NOI18N
+        lblmenu_eval.setText("  EVALUATION");
         lblmenu_eval.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblmenu_eval.setForeground(new java.awt.Color(153, 102, 0));
-        lblmenu_eval.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/eval.png"))); // NOI18N
-        lblmenu_eval.setText("   EVALUATION");
         lblmenu_eval.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_evalMouseClicked(evt);
@@ -643,48 +688,307 @@ public class frmInputs extends javax.swing.JFrame {
             .addGroup(menu_evalLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(lblmenu_eval)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
         menu_evalLayout.setVerticalGroup(
             menu_evalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_evalLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(17, 17, 17)
                 .addComponent(lblmenu_eval)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        menu.add(menu_eval, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 320, 70));
+        menu_user.setBackground(new java.awt.Color(235, 218, 204));
+
+        lblmenu_user.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblmenu_user.setForeground(new java.awt.Color(153, 102, 0));
+        lblmenu_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/db.png"))); // NOI18N
+        lblmenu_user.setText(" USER");
+        lblmenu_user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblmenu_userMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblmenu_userMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblmenu_userMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblmenu_userMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblmenu_userMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menu_userLayout = new javax.swing.GroupLayout(menu_user);
+        menu_user.setLayout(menu_userLayout);
+        menu_userLayout.setHorizontalGroup(
+            menu_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menu_userLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(lblmenu_user)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        menu_userLayout.setVerticalGroup(
+            menu_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menu_userLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(lblmenu_user)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(menu_db, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu_dep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu_train, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu_vacay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu_salary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu_attend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu_eval, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menu_user, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 52, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(menu_db, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(menu_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(menu_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menu_dep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menu_train, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menu_vacay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menu_salary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menu_attend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(menu_eval, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
+        );
+
+        menu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, -1));
 
         kGradientPanel1.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 286, -1));
 
         toolbar.setBackground(new java.awt.Color(235, 218, 204));
 
+        jPanel_Logout.setBackground(new java.awt.Color(235, 218, 204));
+
+        btnjqjzLogout.setBackground(new java.awt.Color(235, 218, 204));
+        btnjqjzLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/logout.png"))); // NOI18N
+        btnjqjzLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzLogoutMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzLogoutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzLogoutMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzLogoutMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzLogoutMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel_LogoutLayout = new javax.swing.GroupLayout(jPanel_Logout);
+        jPanel_Logout.setLayout(jPanel_LogoutLayout);
+        jPanel_LogoutLayout.setHorizontalGroup(
+            jPanel_LogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_LogoutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnjqjzLogout)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel_LogoutLayout.setVerticalGroup(
+            jPanel_LogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_LogoutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnjqjzLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel_Input.setBackground(new java.awt.Color(235, 218, 204));
+
+        btnjqjzInput.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/input.png"))); // NOI18N
+        btnjqjzInput.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzInputMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzInputMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzInputMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzInputMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzInputMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel_InputLayout = new javax.swing.GroupLayout(jPanel_Input);
+        jPanel_Input.setLayout(jPanel_InputLayout);
+        jPanel_InputLayout.setHorizontalGroup(
+            jPanel_InputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_InputLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnjqjzInput)
+                .addContainerGap())
+        );
+        jPanel_InputLayout.setVerticalGroup(
+            jPanel_InputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_InputLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnjqjzInput)
+                .addContainerGap())
+        );
+
+        jPanel_Output.setBackground(new java.awt.Color(235, 218, 204));
+
+        btnjqjzOutput.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/output.png"))); // NOI18N
+        btnjqjzOutput.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzOutputMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzOutputMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzOutputMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzOutputMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzOutputMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel_OutputLayout = new javax.swing.GroupLayout(jPanel_Output);
+        jPanel_Output.setLayout(jPanel_OutputLayout);
+        jPanel_OutputLayout.setHorizontalGroup(
+            jPanel_OutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_OutputLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnjqjzOutput)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel_OutputLayout.setVerticalGroup(
+            jPanel_OutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_OutputLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnjqjzOutput)
+                .addContainerGap())
+        );
+
+        jPanel_Home.setBackground(new java.awt.Color(235, 218, 204));
+
+        btnjqjzHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/Home.png"))); // NOI18N
+        btnjqjzHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzHomeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzHomeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzHomeMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzHomeMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzHomeMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel_HomeLayout = new javax.swing.GroupLayout(jPanel_Home);
+        jPanel_Home.setLayout(jPanel_HomeLayout);
+        jPanel_HomeLayout.setHorizontalGroup(
+            jPanel_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_HomeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnjqjzHome)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel_HomeLayout.setVerticalGroup(
+            jPanel_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_HomeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnjqjzHome)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout toolbarLayout = new javax.swing.GroupLayout(toolbar);
         toolbar.setLayout(toolbarLayout);
         toolbarLayout.setHorizontalGroup(
             toolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1470, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toolbarLayout.createSequentialGroup()
+                .addContainerGap(792, Short.MAX_VALUE)
+                .addComponent(jPanel_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel_Output, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel_Home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel_Logout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(414, 414, 414))
         );
         toolbarLayout.setVerticalGroup(
             toolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addComponent(jPanel_Logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel_Input, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel_Output, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel_Home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         kGradientPanel1.add(toolbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 1470, 60));
 
-        kGradientPanel_db.setkEndColor(new java.awt.Color(224, 163, 109));
+        kGradientPanel_db.setkEndColor(new java.awt.Color(242, 188, 141));
         kGradientPanel_db.setkGradientFocus(700);
         kGradientPanel_db.setkStartColor(new java.awt.Color(255, 223, 171));
+
+        jLabel121.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/dashboard1.png"))); // NOI18N
 
         javax.swing.GroupLayout kGradientPanel_dbLayout = new javax.swing.GroupLayout(kGradientPanel_db);
         kGradientPanel_db.setLayout(kGradientPanel_dbLayout);
         kGradientPanel_dbLayout.setHorizontalGroup(
             kGradientPanel_dbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1465, Short.MAX_VALUE)
+            .addGroup(kGradientPanel_dbLayout.createSequentialGroup()
+                .addGap(175, 175, 175)
+                .addComponent(jLabel121)
+                .addContainerGap(1304, Short.MAX_VALUE))
         );
         kGradientPanel_dbLayout.setVerticalGroup(
             kGradientPanel_dbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 712, Short.MAX_VALUE)
+            .addGroup(kGradientPanel_dbLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel121)
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("tab8", kGradientPanel_db);
@@ -695,22 +999,22 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
+        jLabel6.setText("Employee Information");
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(159, 105, 61));
-        jLabel6.setText("Employee Information");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpName.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzEmpName.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzEmpName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzEmpName.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzEmpName.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzEmpName.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/user.png"))); // NOI18N
 
+        jLabel7.setText("Employee Name");
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel7.setText("Employee Name");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -739,16 +1043,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzEmpID.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzEmpID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzEmpID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzEmpID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzEmpID.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
+        jLabel9.setText("Employee ID");
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel9.setText("Employee ID");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -776,16 +1080,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpAddress.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzEmpAddress.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzEmpAddress.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzEmpAddress.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzEmpAddress.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzEmpAddress.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/address.png"))); // NOI18N
 
+        jLabel11.setText("Employee Address");
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel11.setText("Employee Address");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -814,16 +1118,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpMobile.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzEmpMobile.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzEmpMobile.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzEmpMobile.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzEmpMobile.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzEmpMobile.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/phone.png"))); // NOI18N
 
+        jLabel13.setText("Employee Mobile");
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel13.setText("Employee Mobile");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -851,16 +1155,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpEmail.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzEmpEmail.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzEmpEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzEmpEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzEmpEmail.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzEmpEmail.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/email.png"))); // NOI18N
 
+        jLabel15.setText("Employee Email");
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel15.setText("Employee Email");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -890,13 +1194,13 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/password.png"))); // NOI18N
 
+        jLabel17.setText("Employee Password");
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel17.setText("Employee Password");
 
-        pwjqjzEmpPass.setForeground(new java.awt.Color(178, 121, 74));
         pwjqjzEmpPass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pwjqjzEmpPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        pwjqjzEmpPass.setForeground(new java.awt.Color(178, 121, 74));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -922,11 +1226,11 @@ public class frmInputs extends javax.swing.JFrame {
                     .addComponent(pwjqjzEmpPass)))
         );
 
+        btnjqjzSearch_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_emp.setText("Search Record");
         btnjqjzSearch_emp.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_emp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_emp.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSearch_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_emp.setText("Search Record");
         btnjqjzSearch_emp.setOpaque(true);
         btnjqjzSearch_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -946,11 +1250,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
+        btnjqjzSave_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_emp.setText(" Save Record");
         btnjqjzSave_emp.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_emp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_emp.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSave_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_emp.setText(" Save Record");
         btnjqjzSave_emp.setOpaque(true);
         btnjqjzSave_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -970,11 +1274,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
+        btnjqjzUpdate_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_emp.setText("Update Record");
         btnjqjzUpdate_emp.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_emp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_emp.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzUpdate_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_emp.setText("Update Record");
         btnjqjzUpdate_emp.setOpaque(true);
         btnjqjzUpdate_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -994,11 +1298,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
+        btnjqjzClear_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_emp.setText("Clear Entries");
         btnjqjzClear_emp.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_emp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_emp.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzClear_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_emp.setText("Clear Entries");
         btnjqjzClear_emp.setOpaque(true);
         btnjqjzClear_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1018,11 +1322,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
+        btnjqjzDelete_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_emp.setText("Delete Record");
         btnjqjzDelete_emp.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_emp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_emp.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzDelete_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_emp.setText("Delete Record");
         btnjqjzDelete_emp.setOpaque(true);
         btnjqjzDelete_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1085,7 +1389,7 @@ public class frmInputs extends javax.swing.JFrame {
                                 .addGroup(jPanel_empLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                 .addComponent(jLabel18)
                 .addGap(384, 384, 384))
         );
@@ -1133,23 +1437,23 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(159, 105, 61));
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("Department Information");
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(159, 105, 61));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
-        txtjqjzDepID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzDepID.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzDepID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzDepID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzDepID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzDepID.setForeground(new java.awt.Color(178, 121, 74));
 
+        jLabel24.setText("Department ID");
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel24.setText("Department ID");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1180,14 +1484,14 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/dept_title.png"))); // NOI18N
 
-        txtjqjzDepTitle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzDepTitle.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzDepTitle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzDepTitle.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzDepTitle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzDepTitle.setForeground(new java.awt.Color(178, 121, 74));
 
+        jLabel26.setText("Department Title");
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel26.setText("Department Title");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1214,11 +1518,11 @@ public class frmInputs extends javax.swing.JFrame {
                     .addComponent(txtjqjzDepTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+        btnjqjzSearch_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_dep.setText("Search Record");
         btnjqjzSearch_dep.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_dep.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_dep.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSearch_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_dep.setText("Search Record");
         btnjqjzSearch_dep.setOpaque(true);
         btnjqjzSearch_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1238,11 +1542,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
+        btnjqjzSave_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_dep.setText("Save Record");
         btnjqjzSave_dep.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_dep.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_dep.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSave_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_dep.setText("Save Record");
         btnjqjzSave_dep.setOpaque(true);
         btnjqjzSave_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1262,11 +1566,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
+        btnjqjzClear_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_dep.setText("Clear Entries");
         btnjqjzClear_dep.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_dep.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_dep.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzClear_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_dep.setText("Clear Entries");
         btnjqjzClear_dep.setOpaque(true);
         btnjqjzClear_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1286,11 +1590,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
+        btnjqjzUpdate_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_dep.setText("Update Record");
         btnjqjzUpdate_dep.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_dep.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_dep.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzUpdate_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_dep.setText("Update Record");
         btnjqjzUpdate_dep.setOpaque(true);
         btnjqjzUpdate_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1310,11 +1614,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
+        btnjqjzDelete_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_dep.setText("Delete Record");
         btnjqjzDelete_dep.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_dep.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_dep.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzDelete_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_dep.setText("Delete Record");
         btnjqjzDelete_dep.setOpaque(true);
         btnjqjzDelete_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1364,7 +1668,7 @@ public class frmInputs extends javax.swing.JFrame {
                                 .addComponent(btnjqjzDelete_dep, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnjqjzClear_dep, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
                 .addComponent(jLabel19)
                 .addGap(386, 386, 386))
         );
@@ -1404,23 +1708,23 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(159, 105, 61));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setText("Training Information");
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(159, 105, 61));
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
-        txtjqjzTrainID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzTrainID.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzTrainID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzTrainID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzTrainID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzTrainID.setForeground(new java.awt.Color(178, 121, 74));
 
+        jLabel32.setText("Training ID");
         jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel32.setText("Training ID");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -1451,14 +1755,14 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/train_title.png"))); // NOI18N
 
-        txtjqjzTrainTitle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzTrainTitle.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzTrainTitle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzTrainTitle.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzTrainTitle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzTrainTitle.setForeground(new java.awt.Color(178, 121, 74));
 
+        jLabel34.setText("Training Title");
         jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel34.setText("Training Title");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -1485,58 +1789,138 @@ public class frmInputs extends javax.swing.JFrame {
                     .addComponent(txtjqjzTrainTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+        btnjqjzSearch_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_train.setText("Search Record");
         btnjqjzSearch_train.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_train.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_train.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSearch_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_train.setText("Search Record");
         btnjqjzSearch_train.setOpaque(true);
+        btnjqjzSearch_train.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_trainMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_trainMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_trainMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_trainMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_trainMouseReleased(evt);
+            }
+        });
 
+        btnjqjzSave_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_train.setText("Save Record");
         btnjqjzSave_train.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_train.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_train.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSave_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_train.setText("Save Record");
         btnjqjzSave_train.setOpaque(true);
         btnjqjzSave_train.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnjqjzSave_trainMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_trainMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_trainMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_trainMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_trainMouseReleased(evt);
+            }
         });
 
+        btnjqjzClear_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_train.setText("Clear Entries");
         btnjqjzClear_train.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_train.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_train.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzClear_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_train.setText("Clear Entries");
         btnjqjzClear_train.setOpaque(true);
+        btnjqjzClear_train.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_trainMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_trainMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_trainMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_trainMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_trainMouseReleased(evt);
+            }
+        });
 
+        btnjqjzUpdate_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_train.setText("Update Record");
         btnjqjzUpdate_train.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_train.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_train.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzUpdate_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_train.setText("Update Record");
         btnjqjzUpdate_train.setOpaque(true);
+        btnjqjzUpdate_train.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_trainMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_trainMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_trainMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_trainMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_trainMouseReleased(evt);
+            }
+        });
 
+        btnjqjzDelete_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_train.setText("Delete Record");
         btnjqjzDelete_train.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_train.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_train.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzDelete_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_train.setText("Delete Record");
         btnjqjzDelete_train.setOpaque(true);
+        btnjqjzDelete_train.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_trainMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_trainMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_trainMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_trainMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_trainMouseReleased(evt);
+            }
+        });
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/train_desc.png"))); // NOI18N
 
-        txtjqjzTrainDescription.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzTrainDescription.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzTrainDescription.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzTrainDescription.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzTrainDescription.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzTrainDescription.setForeground(new java.awt.Color(178, 121, 74));
 
+        jLabel36.setText("Training Description");
         jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel36.setText("Training Description");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -1596,7 +1980,7 @@ public class frmInputs extends javax.swing.JFrame {
                                     .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnjqjzClear_train, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
                 .addComponent(jLabel27)
                 .addGap(386, 386, 386))
         );
@@ -1636,22 +2020,22 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
+        jLabel39.setText("Vacation Information");
         jLabel39.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(159, 105, 61));
-        jLabel39.setText("Vacation Information");
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzVacayID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzVacayID.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzVacayID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzVacayID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzVacayID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzVacayID.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/suitcase.png"))); // NOI18N
 
+        jLabel41.setText("Vacation ID");
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel41.setText("Vacation ID");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -1680,16 +2064,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpID_vacay.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzEmpID_vacay.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzEmpID_vacay.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzEmpID_vacay.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzEmpID_vacay.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzEmpID_vacay.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
+        jLabel43.setText("Employee ID");
         jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel43.setText("Employee ID");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -1717,16 +2101,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzVacayTitle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzVacayTitle.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzVacayTitle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzVacayTitle.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzVacayTitle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzVacayTitle.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/notes.png"))); // NOI18N
 
+        jLabel45.setText("Vacation Title");
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel45.setText("Vacation Title");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -1755,16 +2139,14 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel18.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzVacayFrom.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzVacayFrom.setForeground(new java.awt.Color(178, 121, 74));
-        txtjqjzVacayFrom.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzVacayFrom.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
-
         jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/calendar.png"))); // NOI18N
 
+        jLabel49.setText("Vacation from date (mm/dd/yy)");
         jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel49.setText("Vacation from date (mm/dd/yy)");
+
+        dtpjqjzVacayFrom.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        dtpjqjzVacayFrom.setForeground(new java.awt.Color(178, 121, 74));
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -1777,7 +2159,7 @@ public class frmInputs extends javax.swing.JFrame {
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addComponent(jLabel48)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtjqjzVacayFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dtpjqjzVacayFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
@@ -1788,20 +2170,20 @@ public class frmInputs extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel48)
-                    .addComponent(txtjqjzVacayFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(dtpjqjzVacayFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jPanel19.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/calendar.png"))); // NOI18N
 
+        jLabel51.setText("Vacation to date (mm/dd/yy)");
         jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel51.setText("Vacation to date (mm/dd/yy)");
 
-        txtjqjzVacayTo.setForeground(new java.awt.Color(178, 121, 74));
-        txtjqjzVacayTo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzVacayTo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        dtpjqjzVacayTo.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        dtpjqjzVacayTo.setForeground(new java.awt.Color(178, 121, 74));
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -1814,7 +2196,7 @@ public class frmInputs extends javax.swing.JFrame {
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addComponent(jLabel50)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtjqjzVacayTo, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dtpjqjzVacayTo, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
@@ -1823,45 +2205,131 @@ public class frmInputs extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel51)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel50)
-                    .addComponent(txtjqjzVacayTo)))
+                    .addComponent(dtpjqjzVacayTo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btnjqjzSearch_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_vacay.setText("Search Record");
         btnjqjzSearch_vacay.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_vacay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_vacay.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSearch_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_vacay.setText("Search Record");
         btnjqjzSearch_vacay.setOpaque(true);
+        btnjqjzSearch_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_vacayMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_vacayMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_vacayMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_vacayMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_vacayMouseReleased(evt);
+            }
+        });
 
+        btnjqjzSave_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_vacay.setText(" Save Record");
         btnjqjzSave_vacay.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_vacay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_vacay.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSave_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_vacay.setText(" Save Record");
         btnjqjzSave_vacay.setOpaque(true);
+        btnjqjzSave_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_vacayMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_vacayMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_vacayMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_vacayMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_vacayMouseReleased(evt);
+            }
+        });
 
+        btnjqjzUpdate_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_vacay.setText("Update Record");
         btnjqjzUpdate_vacay.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_vacay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_vacay.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzUpdate_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_vacay.setText("Update Record");
         btnjqjzUpdate_vacay.setOpaque(true);
+        btnjqjzUpdate_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_vacayMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_vacayMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_vacayMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_vacayMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_vacayMouseReleased(evt);
+            }
+        });
 
+        btnjqjzClear_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_vacay.setText("Clear Entries");
         btnjqjzClear_vacay.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_vacay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_vacay.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzClear_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_vacay.setText("Clear Entries");
         btnjqjzClear_vacay.setOpaque(true);
+        btnjqjzClear_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_vacayMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_vacayMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_vacayMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_vacayMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_vacayMouseReleased(evt);
+            }
+        });
 
+        btnjqjzDelete_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_vacay.setText("Delete Record");
         btnjqjzDelete_vacay.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_vacay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_vacay.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzDelete_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_vacay.setText("Delete Record");
         btnjqjzDelete_vacay.setOpaque(true);
+        btnjqjzDelete_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_vacayMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_vacayMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_vacayMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_vacayMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_vacayMouseReleased(evt);
+            }
+        });
 
         jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/photo4.png"))); // NOI18N
 
@@ -1904,7 +2372,7 @@ public class frmInputs extends javax.swing.JFrame {
                                 .addGroup(jPanel_vacayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                 .addComponent(jLabel52)
                 .addGap(384, 384, 384))
         );
@@ -1927,14 +2395,14 @@ public class frmInputs extends javax.swing.JFrame {
                 .addGroup(jPanel_vacayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(81, 81, 81)
+                .addGap(70, 70, 70)
                 .addGroup(jPanel_vacayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnjqjzSearch_vacay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnjqjzSave_vacay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnjqjzUpdate_vacay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnjqjzClear_vacay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnjqjzDelete_vacay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(jPanel_vacayLayout.createSequentialGroup()
                 .addComponent(jLabel52)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -1948,22 +2416,22 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
+        jLabel53.setText("Salary Information");
         jLabel53.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(159, 105, 61));
-        jLabel53.setText("Salary Information");
 
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzSalID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzSalID.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzSalID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzSalID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzSalID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzSalID.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/sal_id.png"))); // NOI18N
 
+        jLabel55.setText("Salary ID ");
         jLabel55.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel55.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel55.setText("Salary ID ");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -1992,16 +2460,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpID_sal.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzEmpID_sal.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzEmpID_sal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzEmpID_sal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzEmpID_sal.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzEmpID_sal.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
+        jLabel57.setText("Employee ID");
         jLabel57.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel57.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel57.setText("Employee ID");
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -2029,16 +2497,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel21.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzSal.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzSal.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzSal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzSal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzSal.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzSal.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel58.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/salary.png"))); // NOI18N
 
+        jLabel59.setText("Salary");
         jLabel59.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel59.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel59.setText("Salary");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -2067,16 +2535,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel22.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzSalBonus.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzSalBonus.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzSalBonus.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzSalBonus.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzSalBonus.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzSalBonus.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/bonus.png"))); // NOI18N
 
+        jLabel61.setText("Bonus");
         jLabel61.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel61.setText("Bonus");
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
@@ -2105,16 +2573,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel23.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzSalLoan.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzSalLoan.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzSalLoan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzSalLoan.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzSalLoan.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzSalLoan.setForeground(new java.awt.Color(178, 121, 74));
 
         jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/loan.png"))); // NOI18N
 
+        jLabel63.setText("Loan");
         jLabel63.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel63.setText("Loan");
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -2123,7 +2591,7 @@ public class frmInputs extends javax.swing.JFrame {
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel63)
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addComponent(jLabel62)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2145,13 +2613,12 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/calendar.png"))); // NOI18N
 
+        jLabel65.setText("Last Update");
         jLabel65.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel65.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel65.setText("Last Update");
 
-        txtjqjzSalLastUpdate.setForeground(new java.awt.Color(178, 121, 74));
-        txtjqjzSalLastUpdate.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzSalLastUpdate.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        dtpjqjzSalLastUpdate.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        dtpjqjzSalLastUpdate.setForeground(new java.awt.Color(178, 121, 74));
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -2164,7 +2631,7 @@ public class frmInputs extends javax.swing.JFrame {
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addComponent(jLabel64)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtjqjzSalLastUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dtpjqjzSalLastUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel24Layout.setVerticalGroup(
@@ -2173,45 +2640,131 @@ public class frmInputs extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel65)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel64)
-                    .addComponent(txtjqjzSalLastUpdate)))
+                    .addComponent(dtpjqjzSalLastUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btnjqjzSearch_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_sal.setText("Search Record");
         btnjqjzSearch_sal.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_sal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_sal.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSearch_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_sal.setText("Search Record");
         btnjqjzSearch_sal.setOpaque(true);
+        btnjqjzSearch_sal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_salMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_salMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_salMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_salMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_salMouseReleased(evt);
+            }
+        });
 
+        btnjqjzSave_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_sal.setText(" Save Record");
         btnjqjzSave_sal.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_sal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_sal.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSave_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_sal.setText(" Save Record");
         btnjqjzSave_sal.setOpaque(true);
+        btnjqjzSave_sal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_salMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_salMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_salMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_salMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_salMouseReleased(evt);
+            }
+        });
 
+        btnjqjzUpdate_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_sal.setText("Update Record");
         btnjqjzUpdate_sal.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_sal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_sal.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzUpdate_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_sal.setText("Update Record");
         btnjqjzUpdate_sal.setOpaque(true);
+        btnjqjzUpdate_sal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_salMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_salMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_salMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_salMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_salMouseReleased(evt);
+            }
+        });
 
+        btnjqjzClear_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_sal.setText("Clear Entries");
         btnjqjzClear_sal.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_sal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_sal.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzClear_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_sal.setText("Clear Entries");
         btnjqjzClear_sal.setOpaque(true);
+        btnjqjzClear_sal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_salMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_salMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_salMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_salMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_salMouseReleased(evt);
+            }
+        });
 
+        btnjqjzDelete_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_sal.setText("Delete Record");
         btnjqjzDelete_sal.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_sal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_sal.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzDelete_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_sal.setText("Delete Record");
         btnjqjzDelete_sal.setOpaque(true);
+        btnjqjzDelete_sal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_salMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_salMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_salMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_salMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_salMouseReleased(evt);
+            }
+        });
 
         jLabel66.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/photo5.png"))); // NOI18N
 
@@ -2256,7 +2809,7 @@ public class frmInputs extends javax.swing.JFrame {
                                 .addGroup(jPanel_salaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                 .addComponent(jLabel66)
                 .addGap(384, 384, 384))
         );
@@ -2281,14 +2834,14 @@ public class frmInputs extends javax.swing.JFrame {
                 .addGroup(jPanel_salaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66)
+                .addGap(52, 52, 52)
                 .addGroup(jPanel_salaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnjqjzSearch_sal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnjqjzSave_sal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnjqjzUpdate_sal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnjqjzClear_sal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnjqjzDelete_sal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
             .addGroup(jPanel_salaryLayout.createSequentialGroup()
                 .addComponent(jLabel66)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -2302,22 +2855,22 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
+        jLabel69.setText("Attendance Information");
         jLabel69.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel69.setForeground(new java.awt.Color(159, 105, 61));
-        jLabel69.setText("Attendance Information");
 
         jPanel25.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzAttendID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzAttendID.setForeground(new java.awt.Color(178, 121, 74));
-        txtjqjzAttendID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzAttendID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzEmpID_attend.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzEmpID_attend.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzEmpID_attend.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzEmpID_attend.setForeground(new java.awt.Color(178, 121, 74));
 
-        jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/attend_id.png"))); // NOI18N
+        jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
+        jLabel71.setText("Employee ID ");
         jLabel71.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel71.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel71.setText("Attendance ID ");
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -2326,12 +2879,11 @@ public class frmInputs extends javax.swing.JFrame {
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel71)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(178, 214, Short.MAX_VALUE))
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addComponent(jLabel70)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtjqjzAttendID, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(txtjqjzEmpID_attend))
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2341,21 +2893,21 @@ public class frmInputs extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel70)
-                    .addComponent(txtjqjzAttendID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtjqjzEmpID_attend, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel26.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpID_attend.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzEmpID_attend.setForeground(new java.awt.Color(178, 121, 74));
-        txtjqjzEmpID_attend.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzEmpID_attend.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzAttendID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzAttendID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzAttendID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzAttendID.setForeground(new java.awt.Color(178, 121, 74));
 
-        jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
+        jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/attend_id.png"))); // NOI18N
 
+        jLabel73.setText("Attendance ID");
         jLabel73.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel73.setText("Employee ID");
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -2368,7 +2920,8 @@ public class frmInputs extends javax.swing.JFrame {
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addComponent(jLabel72)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtjqjzEmpID_attend))
+                .addComponent(txtjqjzAttendID)
+                .addContainerGap())
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2378,21 +2931,21 @@ public class frmInputs extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel72)
-                    .addComponent(txtjqjzEmpID_attend, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtjqjzAttendID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel28.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/attend_type.png"))); // NOI18N
+
+        jLabel77.setText("Attendance Type");
+        jLabel77.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel77.setForeground(new java.awt.Color(178, 121, 74));
 
         txtjqjzAttendType.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzAttendType.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzAttendType.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzAttendType.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
-
-        jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/attend_type.png"))); // NOI18N
-
-        jLabel77.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jLabel77.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel77.setText("Attendance Type");
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -2422,16 +2975,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel29.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzAttendTimeDate.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzAttendTimeDate.setForeground(new java.awt.Color(178, 121, 74));
-        txtjqjzAttendTimeDate.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzAttendTimeDate.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
-
         jLabel78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/timedate.png"))); // NOI18N
 
+        jLabel79.setText("Attendance date and time (yyyy-mm--dd hh:mm:ss)");
         jLabel79.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel79.setText("Attendance time & date");
+
+        txtjqjzAttendDateTime.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzAttendDateTime.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzAttendDateTime.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzAttendDateTime.setForeground(new java.awt.Color(178, 121, 74));
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -2445,54 +2998,140 @@ public class frmInputs extends javax.swing.JFrame {
                     .addGroup(jPanel29Layout.createSequentialGroup()
                         .addComponent(jLabel78)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtjqjzAttendTimeDate, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(91, Short.MAX_VALUE))
+                        .addComponent(txtjqjzAttendDateTime, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel29Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel79)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel78)
-                    .addComponent(txtjqjzAttendTimeDate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtjqjzAttendDateTime, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btnjqjzSearch_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_attend.setText("Search Record");
         btnjqjzSearch_attend.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_attend.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_attend.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSearch_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_attend.setText("Search Record");
         btnjqjzSearch_attend.setOpaque(true);
+        btnjqjzSearch_attend.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_attendMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_attendMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_attendMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_attendMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_attendMouseReleased(evt);
+            }
+        });
 
+        btnjqjzSave_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_attend.setText(" Save Record");
         btnjqjzSave_attend.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_attend.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_attend.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSave_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_attend.setText(" Save Record");
         btnjqjzSave_attend.setOpaque(true);
+        btnjqjzSave_attend.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_attendMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_attendMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_attendMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_attendMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_attendMouseReleased(evt);
+            }
+        });
 
+        btnjqjzUpdate_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_attend.setText("Update Record");
         btnjqjzUpdate_attend.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_attend.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_attend.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzUpdate_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_attend.setText("Update Record");
         btnjqjzUpdate_attend.setOpaque(true);
+        btnjqjzUpdate_attend.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_attendMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_attendMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_attendMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_attendMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_attendMouseReleased(evt);
+            }
+        });
 
-        btnjqjz_attend.setBackground(new java.awt.Color(178, 121, 74));
-        btnjqjz_attend.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnjqjz_attend.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjz_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjz_attend.setText("Clear Entries");
-        btnjqjz_attend.setOpaque(true);
+        btnjqjz_Clear.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjz_Clear.setText("Clear Entries");
+        btnjqjz_Clear.setBackground(new java.awt.Color(178, 121, 74));
+        btnjqjz_Clear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjz_Clear.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjz_Clear.setOpaque(true);
+        btnjqjz_Clear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjz_ClearMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjz_ClearMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjz_ClearMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjz_ClearMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjz_ClearMouseReleased(evt);
+            }
+        });
 
+        btnjqjzDelete_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_attend.setText("Delete Record");
         btnjqjzDelete_attend.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_attend.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_attend.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzDelete_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_attend.setText("Delete Record");
         btnjqjzDelete_attend.setOpaque(true);
+        btnjqjzDelete_attend.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_attendMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_attendMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_attendMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_attendMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_attendMouseReleased(evt);
+            }
+        });
 
         jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/photo6.png"))); // NOI18N
 
@@ -2511,11 +3150,6 @@ public class frmInputs extends javax.swing.JFrame {
                         .addGap(332, 332, 332)
                         .addComponent(jLabel69))
                     .addGroup(jPanel_attendLayout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)
-                        .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel_attendLayout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(jPanel_attendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel_attendLayout.createSequentialGroup()
@@ -2527,12 +3161,19 @@ public class frmInputs extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnjqjzDelete_attend, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnjqjz_attend, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnjqjz_Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel_attendLayout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(64, 64, 64)
-                                .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(jPanel_attendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel_attendLayout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel_attendLayout.createSequentialGroup()
+                                        .addGap(35, 35, 35)
+                                        .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(57, 57, 57)
+                                .addGroup(jPanel_attendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel82)
                 .addGap(384, 384, 384))
@@ -2553,15 +3194,15 @@ public class frmInputs extends javax.swing.JFrame {
                 .addGap(84, 84, 84)
                 .addGroup(jPanel_attendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(105, 105, 105)
+                    .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(72, 72, 72)
                 .addGroup(jPanel_attendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnjqjzSearch_attend, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnjqjzSave_attend, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnjqjzUpdate_attend, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnjqjz_attend, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnjqjz_Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnjqjzDelete_attend, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
             .addGroup(jPanel_attendLayout.createSequentialGroup()
                 .addComponent(jLabel82)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -2577,23 +3218,23 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel80.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
-        jLabel81.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel81.setForeground(new java.awt.Color(159, 105, 61));
         jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel81.setText("Evaluation Information");
+        jLabel81.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(159, 105, 61));
 
         jPanel27.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel83.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
-        txtjqjzEvalID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzEvalID.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzEvalID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzEvalID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzEvalID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzEvalID.setForeground(new java.awt.Color(178, 121, 74));
 
+        jLabel84.setText("Evaluation ID");
         jLabel84.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel84.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel84.setText("Evaluation ID");
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -2624,14 +3265,14 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel85.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/user.png"))); // NOI18N
 
-        txtjqjzUserID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzUserID.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzUserID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzUserID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzUserID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUserID.setForeground(new java.awt.Color(178, 121, 74));
 
+        jLabel86.setText("User ID");
         jLabel86.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel86.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel86.setText("User ID");
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -2658,53 +3299,138 @@ public class frmInputs extends javax.swing.JFrame {
                     .addComponent(txtjqjzUserID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+        btnjqjzSearch_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_eval.setText("Search Record");
         btnjqjzSearch_eval.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_eval.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_eval.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSearch_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_eval.setText("Search Record");
         btnjqjzSearch_eval.setOpaque(true);
+        btnjqjzSearch_eval.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_evalMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_evalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_evalMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_evalMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_evalMouseReleased(evt);
+            }
+        });
 
+        btnjqjzSave_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_eval.setText("Save Record");
         btnjqjzSave_eval.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_eval.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_eval.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzSave_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_eval.setText("Save Record");
         btnjqjzSave_eval.setOpaque(true);
+        btnjqjzSave_eval.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_evalMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_evalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_evalMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_evalMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_evalMouseReleased(evt);
+            }
+        });
 
+        btnjqjzClear_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_eval.setText("Clear Entries");
         btnjqjzClear_eval.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_eval.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_eval.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzClear_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_eval.setText("Clear Entries");
         btnjqjzClear_eval.setOpaque(true);
+        btnjqjzClear_eval.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_evalMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_evalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_evalMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_evalMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_evalMouseReleased(evt);
+            }
+        });
 
+        btnjqjzUpdate_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_eval.setText("Update Record");
         btnjqjzUpdate_eval.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_eval.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_eval.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzUpdate_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_eval.setText("Update Record");
         btnjqjzUpdate_eval.setOpaque(true);
+        btnjqjzUpdate_eval.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_evalMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_evalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_evalMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_evalMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_evalMouseReleased(evt);
+            }
+        });
 
+        btnjqjzDelete_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_eval.setText("Delete Record");
         btnjqjzDelete_eval.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_eval.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_eval.setForeground(new java.awt.Color(255, 255, 255));
-        btnjqjzDelete_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_eval.setText("Delete Record");
         btnjqjzDelete_eval.setOpaque(true);
+        btnjqjzDelete_eval.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_evalMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_evalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_evalMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_evalMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_evalMouseReleased(evt);
+            }
+        });
 
         jPanel31.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel87.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/eval_value.png"))); // NOI18N
 
-        txtjqjzEvalValue.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        txtjqjzEvalValue.setForeground(new java.awt.Color(178, 121, 74));
         txtjqjzEvalValue.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtjqjzEvalValue.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+        txtjqjzEvalValue.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzEvalValue.setForeground(new java.awt.Color(178, 121, 74));
 
+        jLabel88.setText("Evaluation Value");
         jLabel88.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel88.setForeground(new java.awt.Color(178, 121, 74));
-        jLabel88.setText("Evaluation Value");
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -2764,7 +3490,7 @@ public class frmInputs extends javax.swing.JFrame {
                                     .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnjqjzClear_eval, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
                 .addComponent(jLabel74)
                 .addGap(386, 386, 386))
         );
@@ -2797,6 +3523,906 @@ public class frmInputs extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("tab2", jPanel_eval);
+
+        jPanel_user.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel89.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/logo2_trsp.png"))); // NOI18N
+
+        jLabel90.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
+
+        jLabel91.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(159, 105, 61));
+        jLabel91.setText("User Information");
+
+        jPanel32.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel34.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtjqjzUserFName.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUserFName.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUserFName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUserFName.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        jLabel96.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/user.png"))); // NOI18N
+
+        jLabel97.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel97.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel97.setText("First Name");
+
+        jPanel38.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtjqjzUserMName.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUserMName.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUserMName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUserMName.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        jLabel105.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/user.png"))); // NOI18N
+
+        jLabel106.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel106.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel106.setText("Middle Name");
+
+        javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
+        jPanel38.setLayout(jPanel38Layout);
+        jPanel38Layout.setHorizontalGroup(
+            jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel38Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel106)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel38Layout.createSequentialGroup()
+                .addComponent(jLabel105)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtjqjzUserMName, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 20, Short.MAX_VALUE))
+        );
+        jPanel38Layout.setVerticalGroup(
+            jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel38Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel106)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel105)
+                    .addComponent(txtjqjzUserMName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel39.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel107.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/password.png"))); // NOI18N
+
+        jLabel108.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel108.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel108.setText("Password");
+
+        pwjqjzUserPass.setForeground(new java.awt.Color(178, 121, 74));
+        pwjqjzUserPass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pwjqjzUserPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
+        jPanel39.setLayout(jPanel39Layout);
+        jPanel39Layout.setHorizontalGroup(
+            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel39Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel108)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel39Layout.createSequentialGroup()
+                .addComponent(jLabel107)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pwjqjzUserPass, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel39Layout.setVerticalGroup(
+            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel39Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel108)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel107)
+                    .addComponent(pwjqjzUserPass, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
+        jPanel34.setLayout(jPanel34Layout);
+        jPanel34Layout.setHorizontalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel34Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel97)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel34Layout.createSequentialGroup()
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel34Layout.createSequentialGroup()
+                        .addComponent(jLabel96)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtjqjzUserFName, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 20, Short.MAX_VALUE))
+        );
+        jPanel34Layout.setVerticalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel97)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel96, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtjqjzUserFName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
+        jPanel32.setLayout(jPanel32Layout);
+        jPanel32Layout.setHorizontalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel32Layout.setVerticalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel35.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtjqjzUsername.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUsername.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUsername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUsername.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        jLabel98.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
+
+        jLabel99.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel99.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel99.setText("User Name");
+
+        javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
+        jPanel35.setLayout(jPanel35Layout);
+        jPanel35Layout.setHorizontalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel35Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel99)
+                .addContainerGap(244, Short.MAX_VALUE))
+            .addGroup(jPanel35Layout.createSequentialGroup()
+                .addComponent(jLabel98)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtjqjzUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel35Layout.setVerticalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel35Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel99)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel98)
+                    .addComponent(txtjqjzUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel36.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtjqjzUserGender.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUserGender.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUserGender.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUserGender.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        jLabel100.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/gender.png"))); // NOI18N
+
+        jLabel101.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel101.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel101.setText("Gender");
+
+        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
+        jPanel36.setLayout(jPanel36Layout);
+        jPanel36Layout.setHorizontalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel36Layout.createSequentialGroup()
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel36Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel101))
+                    .addGroup(jPanel36Layout.createSequentialGroup()
+                        .addComponent(jLabel100)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtjqjzUserGender, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+        jPanel36Layout.setVerticalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel36Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel101)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel100)
+                    .addComponent(txtjqjzUserGender, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel37.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel102.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/usertype.png"))); // NOI18N
+
+        jLabel103.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel103.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel103.setText("User Type ID");
+
+        txtjqjzUserTypeID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUserTypeID.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUserTypeID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUserTypeID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        jPanel40.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel109.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/password.png"))); // NOI18N
+
+        jLabel110.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel110.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel110.setText("E-mail Address");
+
+        txtjqjzUserEmail.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUserEmail.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUserEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUserEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
+        jPanel40.setLayout(jPanel40Layout);
+        jPanel40Layout.setHorizontalGroup(
+            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel40Layout.createSequentialGroup()
+                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel40Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel110))
+                    .addGroup(jPanel40Layout.createSequentialGroup()
+                        .addComponent(jLabel109)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtjqjzUserEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel40Layout.setVerticalGroup(
+            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel40Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel110)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel109)
+                    .addComponent(txtjqjzUserEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0))
+        );
+
+        javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
+        jPanel37.setLayout(jPanel37Layout);
+        jPanel37Layout.setHorizontalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel37Layout.createSequentialGroup()
+                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel37Layout.createSequentialGroup()
+                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel37Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel103))
+                            .addGroup(jPanel37Layout.createSequentialGroup()
+                                .addComponent(jLabel102)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtjqjzUserTypeID, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel40, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel37Layout.setVerticalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel37Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel103)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel102)
+                    .addComponent(txtjqjzUserTypeID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        btnjqjzSearch_user.setBackground(new java.awt.Color(178, 121, 74));
+        btnjqjzSearch_user.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjzSearch_user.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSearch_user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_user.setText("Search Record");
+        btnjqjzSearch_user.setOpaque(true);
+        btnjqjzSearch_user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_userMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_userMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_userMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_userMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_userMouseReleased(evt);
+            }
+        });
+
+        btnjqjzSave_user.setBackground(new java.awt.Color(178, 121, 74));
+        btnjqjzSave_user.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjzSave_user.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSave_user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_user.setText(" Save Record");
+        btnjqjzSave_user.setOpaque(true);
+        btnjqjzSave_user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_userMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_userMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_userMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_userMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_userMouseReleased(evt);
+            }
+        });
+
+        btnjqjzUpdate_user.setBackground(new java.awt.Color(178, 121, 74));
+        btnjqjzUpdate_user.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjzUpdate_user.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzUpdate_user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_user.setText("Update Record");
+        btnjqjzUpdate_user.setOpaque(true);
+        btnjqjzUpdate_user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_userMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_userMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_userMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_userMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_userMouseReleased(evt);
+            }
+        });
+
+        btnjqjzClear_user.setBackground(new java.awt.Color(178, 121, 74));
+        btnjqjzClear_user.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjzClear_user.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzClear_user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_user.setText("Clear Entries");
+        btnjqjzClear_user.setOpaque(true);
+        btnjqjzClear_user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_userMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_userMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_userMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_userMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_userMouseReleased(evt);
+            }
+        });
+
+        btnjqjzDelete_user.setBackground(new java.awt.Color(178, 121, 74));
+        btnjqjzDelete_user.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjzDelete_user.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzDelete_user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_user.setText("Delete Record");
+        btnjqjzDelete_user.setOpaque(true);
+        btnjqjzDelete_user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_userMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_userMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_userMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_userMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_userMouseReleased(evt);
+            }
+        });
+
+        jLabel104.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/photo1.png"))); // NOI18N
+
+        jLabel95.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel95.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel95.setText("User ID");
+
+        jLabel94.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
+
+        txtjqjzUserID_user.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUserID_user.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUserID_user.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUserID_user.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        jLabel92.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/user.png"))); // NOI18N
+
+        txtjqjzUserLName.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUserLName.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUserLName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUserLName.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        jLabel93.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel93.setText("Last Name");
+
+        btnjqjz_usertype.setBackground(new java.awt.Color(255, 255, 255));
+        btnjqjz_usertype.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjz_usertype.setForeground(new java.awt.Color(178, 121, 74));
+        btnjqjz_usertype.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjz_usertype.setText("User Type");
+        btnjqjz_usertype.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(178, 121, 74)));
+        btnjqjz_usertype.setOpaque(true);
+        btnjqjz_usertype.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjz_usertypeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjz_usertypeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjz_usertypeMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjz_usertypeMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjz_usertypeMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel_userLayout = new javax.swing.GroupLayout(jPanel_user);
+        jPanel_user.setLayout(jPanel_userLayout);
+        jPanel_userLayout.setHorizontalGroup(
+            jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_userLayout.createSequentialGroup()
+                .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel_userLayout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel_userLayout.createSequentialGroup()
+                                .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel95)
+                                    .addGroup(jPanel_userLayout.createSequentialGroup()
+                                        .addComponent(jLabel94)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtjqjzUserID_user, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel_userLayout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel93)
+                                            .addGroup(jPanel_userLayout.createSequentialGroup()
+                                                .addComponent(jLabel92)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtjqjzUserLName, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jPanel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jPanel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel_userLayout.createSequentialGroup()
+                                        .addComponent(btnjqjzSave_user, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnjqjzSearch_user, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel_userLayout.createSequentialGroup()
+                                .addComponent(btnjqjzUpdate_user, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnjqjzDelete_user, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnjqjzClear_user, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnjqjz_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel_userLayout.createSequentialGroup()
+                        .addGap(299, 299, 299)
+                        .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel90))
+                    .addGroup(jPanel_userLayout.createSequentialGroup()
+                        .addGap(358, 358, 358)
+                        .addComponent(jLabel91)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
+                .addComponent(jLabel104)
+                .addGap(384, 384, 384))
+        );
+        jPanel_userLayout.setVerticalGroup(
+            jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_userLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel90, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel91)
+                .addGap(13, 13, 13)
+                .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel_userLayout.createSequentialGroup()
+                        .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_userLayout.createSequentialGroup()
+                        .addComponent(jLabel95)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel94)
+                            .addComponent(txtjqjzUserID_user, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel93)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel92)
+                            .addComponent(txtjqjzUserLName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel_userLayout.createSequentialGroup()
+                        .addComponent(jPanel37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnjqjzSave_user, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnjqjzSearch_user, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnjqjzUpdate_user, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnjqjzClear_user, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnjqjzDelete_user, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnjqjz_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel_userLayout.createSequentialGroup()
+                .addComponent(jLabel104)
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab1", jPanel_user);
+
+        jPanel_usertype.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel111.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/photo3.png"))); // NOI18N
+
+        jLabel112.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/logo2_trsp.png"))); // NOI18N
+
+        jLabel113.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
+
+        jLabel114.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel114.setForeground(new java.awt.Color(159, 105, 61));
+        jLabel114.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel114.setText("User Type Information");
+
+        jPanel33.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel115.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
+
+        txtjqjzUserType_ID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUserType_ID.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUserType_ID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUserType_ID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        jLabel116.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel116.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel116.setText("User ID");
+
+        javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
+        jPanel33.setLayout(jPanel33Layout);
+        jPanel33Layout.setHorizontalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel33Layout.createSequentialGroup()
+                .addComponent(jLabel115)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtjqjzUserType_ID)
+                .addContainerGap())
+            .addGroup(jPanel33Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel116)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel33Layout.setVerticalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel33Layout.createSequentialGroup()
+                .addGap(0, 11, Short.MAX_VALUE)
+                .addComponent(jLabel116)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel115, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtjqjzUserType_ID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel41.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel117.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/user.png"))); // NOI18N
+
+        txtjqjzUserType_name.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUserType_name.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUserType_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUserType_name.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        jLabel118.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel118.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel118.setText("Name");
+
+        javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
+        jPanel41.setLayout(jPanel41Layout);
+        jPanel41Layout.setHorizontalGroup(
+            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel41Layout.createSequentialGroup()
+                .addComponent(jLabel117)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtjqjzUserType_name)
+                .addContainerGap())
+            .addGroup(jPanel41Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel118)
+                .addContainerGap(260, Short.MAX_VALUE))
+        );
+        jPanel41Layout.setVerticalGroup(
+            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel41Layout.createSequentialGroup()
+                .addGap(0, 11, Short.MAX_VALUE)
+                .addComponent(jLabel118)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel117, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtjqjzUserType_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        btnjqjzSearch_usertype.setBackground(new java.awt.Color(178, 121, 74));
+        btnjqjzSearch_usertype.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjzSearch_usertype.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSearch_usertype.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_usertype.setText("Search Record");
+        btnjqjzSearch_usertype.setOpaque(true);
+        btnjqjzSearch_usertype.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_usertypeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_usertypeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_usertypeMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_usertypeMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSearch_usertypeMouseReleased(evt);
+            }
+        });
+
+        btnjqjzSave_usertype.setBackground(new java.awt.Color(178, 121, 74));
+        btnjqjzSave_usertype.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjzSave_usertype.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSave_usertype.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_usertype.setText("Save Record");
+        btnjqjzSave_usertype.setOpaque(true);
+        btnjqjzSave_usertype.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_usertypeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_usertypeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_usertypeMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_usertypeMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzSave_usertypeMouseReleased(evt);
+            }
+        });
+
+        btnjqjzClear_usertype.setBackground(new java.awt.Color(178, 121, 74));
+        btnjqjzClear_usertype.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjzClear_usertype.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzClear_usertype.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_usertype.setText("Clear Entries");
+        btnjqjzClear_usertype.setOpaque(true);
+        btnjqjzClear_usertype.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_usertypeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_usertypeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_usertypeMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_usertypeMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzClear_usertypeMouseReleased(evt);
+            }
+        });
+
+        btnjqjzUpdate_usertype.setBackground(new java.awt.Color(178, 121, 74));
+        btnjqjzUpdate_usertype.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjzUpdate_usertype.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzUpdate_usertype.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_usertype.setText("Update Record");
+        btnjqjzUpdate_usertype.setOpaque(true);
+        btnjqjzUpdate_usertype.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_usertypeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_usertypeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_usertypeMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_usertypeMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzUpdate_usertypeMouseReleased(evt);
+            }
+        });
+
+        btnjqjzDelete_usertype.setBackground(new java.awt.Color(178, 121, 74));
+        btnjqjzDelete_usertype.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnjqjzDelete_usertype.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzDelete_usertype.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_usertype.setText("Delete Record");
+        btnjqjzDelete_usertype.setOpaque(true);
+        btnjqjzDelete_usertype.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_usertypeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_usertypeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_usertypeMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_usertypeMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnjqjzDelete_usertypeMouseReleased(evt);
+            }
+        });
+
+        jPanel42.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel119.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/train_desc.png"))); // NOI18N
+
+        txtjqjzUserType_desc.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtjqjzUserType_desc.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUserType_desc.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUserType_desc.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
+
+        jLabel120.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel120.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel120.setText("Description");
+
+        javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
+        jPanel42.setLayout(jPanel42Layout);
+        jPanel42Layout.setHorizontalGroup(
+            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel42Layout.createSequentialGroup()
+                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel42Layout.createSequentialGroup()
+                        .addComponent(jLabel119)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtjqjzUserType_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel42Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel120)))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+        jPanel42Layout.setVerticalGroup(
+            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel42Layout.createSequentialGroup()
+                .addGap(0, 11, Short.MAX_VALUE)
+                .addComponent(jLabel120)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel119, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtjqjzUserType_desc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        javax.swing.GroupLayout jPanel_usertypeLayout = new javax.swing.GroupLayout(jPanel_usertype);
+        jPanel_usertype.setLayout(jPanel_usertypeLayout);
+        jPanel_usertypeLayout.setHorizontalGroup(
+            jPanel_usertypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_usertypeLayout.createSequentialGroup()
+                .addGroup(jPanel_usertypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel_usertypeLayout.createSequentialGroup()
+                        .addGap(239, 239, 239)
+                        .addGroup(jPanel_usertypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel_usertypeLayout.createSequentialGroup()
+                                .addComponent(jLabel112)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel113))
+                            .addComponent(jLabel114, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel_usertypeLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(jPanel_usertypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel_usertypeLayout.createSequentialGroup()
+                                .addComponent(btnjqjzSave_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnjqjzSearch_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnjqjzUpdate_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnjqjzDelete_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel_usertypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel_usertypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPanel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnjqjzClear_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
+                .addComponent(jLabel111)
+                .addGap(386, 386, 386))
+        );
+        jPanel_usertypeLayout.setVerticalGroup(
+            jPanel_usertypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_usertypeLayout.createSequentialGroup()
+                .addComponent(jLabel111)
+                .addGap(0, 12, Short.MAX_VALUE))
+            .addGroup(jPanel_usertypeLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel_usertypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel113)
+                    .addComponent(jLabel112))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel114)
+                .addGap(37, 37, 37)
+                .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82)
+                .addGroup(jPanel_usertypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnjqjzSearch_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnjqjzSave_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnjqjzClear_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnjqjzUpdate_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnjqjzDelete_usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab2", jPanel_usertype);
 
         kGradientPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 24, 1470, 740));
 
@@ -3627,6 +5253,2151 @@ public class frmInputs extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnjqjzSave_trainMouseClicked
 
+    private void btnjqjzSave_trainMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_trainMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSave_train.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_trainMouseEntered
+
+    private void btnjqjzSave_trainMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_trainMouseExited
+        // TODO add your handling code here:
+        btnjqjzSave_train.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSave_trainMouseExited
+
+    private void btnjqjzSave_trainMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_trainMousePressed
+        // TODO add your handling code here:
+        btnjqjzSave_train.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_trainMousePressed
+
+    private void btnjqjzSave_trainMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_trainMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSave_train.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSave_trainMouseReleased
+
+    private void btnjqjzSearch_trainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_trainMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzTrainID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Training ID!");
+             txtjqjzTrainID.requestFocus();
+         }
+        else{
+             try {
+                strjqjzTrainID = txtjqjzTrainID.getText();
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) as totRec FROM tbljqjz_trainings WHERE Training_id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzTrainID);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                     //JOptionPane.showMessageDialog(null, numberOfRows);
+                    jqjznumberOfRows = (jqjzrs.getInt("totRec"));
+                }
+                if(jqjznumberOfRows == 1){
+                    jqjzstrSQL = "SELECT * FROM tbljqjz_trainings WHERE Training_id=?";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1,strjqjzTrainID);
+
+                    jqjzrs = jqjzpreparedStatement.executeQuery();
+                    
+                    while(jqjzrs.next()){
+                        //JOptionPane.showMessageDialog(null, numberOfRows);
+                        txtjqjzTrainID.setText(jqjzrs.getString("Training_id"));
+                        txtjqjzTrainTitle.setText(jqjzrs.getString("Training_title"));
+                        txtjqjzTrainDescription.setText(jqjzrs.getString("Training_description"));
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Record Does Not Exist!");
+                    txtjqjzTrainID.setText("");
+                    txtjqjzTrainTitle.setText("");
+                    txtjqjzTrainDescription.setText("");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSearch_trainMouseClicked
+
+    private void btnjqjzSearch_trainMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_trainMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSearch_train.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_trainMouseEntered
+
+    private void btnjqjzSearch_trainMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_trainMouseExited
+        // TODO add your handling code here:
+        btnjqjzSearch_train.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSearch_trainMouseExited
+
+    private void btnjqjzSearch_trainMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_trainMousePressed
+        // TODO add your handling code here:
+        btnjqjzSearch_train.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_trainMousePressed
+
+    private void btnjqjzSearch_trainMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_trainMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSearch_train.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSearch_trainMouseReleased
+
+    private void btnjqjzUpdate_trainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_trainMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzTrainID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Training ID!");
+             txtjqjzTrainID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzTrainID = txtjqjzTrainID.getText();
+                strjqjzTrainTitle = txtjqjzTrainTitle.getText();
+                strjqjzTrainDescription = txtjqjzTrainDescription.getText();
+                
+                jqjzconn = jqjzC.makeConnection();
+                String jqjzupdateTableSQL = "UPDATE tbljqjz_trainings SET Training_title = ?,Training_description = ?"
+                        + "WHERE Training_id = ?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzupdateTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzTrainTitle);
+                    jqjzpreparedStatement.setString(2, strjqjzTrainDescription);
+                    jqjzpreparedStatement.setString(3, strjqjzTrainID);
+                    // execute update SQL stetement
+                    jqjzpreparedStatement.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Updated!");
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzUpdate_trainMouseClicked
+
+    private void btnjqjzUpdate_trainMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_trainMouseEntered
+        // TODO add your handling code here:
+        btnjqjzUpdate_train.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_trainMouseEntered
+
+    private void btnjqjzUpdate_trainMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_trainMouseExited
+        // TODO add your handling code here:
+        btnjqjzUpdate_train.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzUpdate_trainMouseExited
+
+    private void btnjqjzUpdate_trainMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_trainMousePressed
+        // TODO add your handling code here:
+        btnjqjzUpdate_train.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_trainMousePressed
+
+    private void btnjqjzUpdate_trainMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_trainMouseReleased
+        // TODO add your handling code here:
+        btnjqjzUpdate_train.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzUpdate_trainMouseReleased
+
+    private void btnjqjzDelete_trainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_trainMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzTrainID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Training ID!");
+             txtjqjzTrainID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzTrainID = txtjqjzTrainID.getText();
+
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "DELETE FROM tbljqjz_trainings WHERE Training_id = ?";;
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzTrainID);
+                    // execute delete SQL stetement
+                    jqjzpreparedStatement .executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Deleted!");
+                    txtjqjzTrainID.setText("");
+                    txtjqjzTrainTitle.setText("");
+                    txtjqjzTrainDescription.setText("");                   
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzDelete_trainMouseClicked
+
+    private void btnjqjzDelete_trainMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_trainMouseEntered
+        // TODO add your handling code here:
+        btnjqjzDelete_train.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_trainMouseEntered
+
+    private void btnjqjzDelete_trainMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_trainMouseExited
+        // TODO add your handling code here:
+        btnjqjzDelete_train.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzDelete_trainMouseExited
+
+    private void btnjqjzDelete_trainMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_trainMousePressed
+        // TODO add your handling code here:
+        btnjqjzDelete_train.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_trainMousePressed
+
+    private void btnjqjzDelete_trainMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_trainMouseReleased
+        // TODO add your handling code here:
+        btnjqjzDelete_train.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzDelete_trainMouseReleased
+
+    private void btnjqjzClear_trainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_trainMouseClicked
+        // TODO add your handling code here:
+        txtjqjzTrainID.setText("");
+        txtjqjzTrainTitle.setText("");
+        txtjqjzTrainDescription.setText("");
+    }//GEN-LAST:event_btnjqjzClear_trainMouseClicked
+
+    private void btnjqjzClear_trainMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_trainMouseEntered
+        // TODO add your handling code here:
+        btnjqjzClear_train.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_trainMouseEntered
+
+    private void btnjqjzClear_trainMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_trainMouseExited
+        // TODO add your handling code here:
+        btnjqjzClear_train.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzClear_trainMouseExited
+
+    private void btnjqjzClear_trainMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_trainMousePressed
+        // TODO add your handling code here:
+        btnjqjzClear_train.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_trainMousePressed
+
+    private void btnjqjzClear_trainMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_trainMouseReleased
+        // TODO add your handling code here:
+        btnjqjzClear_train.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzClear_trainMouseReleased
+
+    private void btnjqjzSave_vacayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_vacayMouseClicked
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        if(txtjqjzEmpID_vacay.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Employee ID!");
+             txtjqjzEmpID_vacay.requestFocus();
+         }
+         else if(txtjqjzVacayID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Vacation ID!");
+             txtjqjzVacayID.requestFocus();
+         }
+         else if(txtjqjzVacayTitle.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Vacation Title!");
+             txtjqjzVacayTitle.requestFocus();
+         }
+          else if(dtpjqjzVacayFrom.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Vacation Date (From)!");
+             dtpjqjzVacayFrom.requestFocus();
+         }
+          else if(dtpjqjzVacayTo.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Vacation Date (To)!");
+             dtpjqjzVacayTo.requestFocus();
+         }
+         else{
+             try {
+                //intID = Integer.parseInt(txtID.getText());
+                strjqjzEmpID_vacay = txtjqjzEmpID_vacay.getText();
+                strjqjzVacayID = txtjqjzVacayID.getText();
+                strjqjzVacayTitle = txtjqjzVacayTitle.getText();
+                strjqjzVacayFrom = dtpjqjzVacayFrom.getText();
+                strjqjzVacayTo = dtpjqjzVacayTo.getText();
+                
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) AS totRec FROM tbljqjz_vacations WHERE Vacation_id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzEmpID_vacay);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                    jqjznumberOfRows = jqjzrs.getInt("totRec");
+                    //JOptionPane.showMessageDialog(null, numberOfRows);
+                }
+                if(jqjznumberOfRows == 1){
+                    JOptionPane.showMessageDialog(null, "Record Already Exist!");
+                }
+                else {
+                    String jqjzinsertTableSQL = "INSERT INTO tbljqjz_vacations"
+                    + "(Vacation_id, Vacation_title, Vacation_from_date, Vacation_to_date, Employee_id) VALUES"
+                    + "(?,?,?,?,?)";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzinsertTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzVacayID);
+                    jqjzpreparedStatement.setString(2, strjqjzVacayTitle);
+                    jqjzpreparedStatement.setString(3, strjqjzVacayFrom);
+                    jqjzpreparedStatement.setString(4, strjqjzVacayTo);
+                    jqjzpreparedStatement.setString(5, strjqjzEmpID_vacay);
+                    
+                    // execute insert SQL stetement
+                    jqjzpreparedStatement .executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Saved!");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSave_vacayMouseClicked
+
+    private void btnjqjzSave_vacayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_vacayMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSave_vacay.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_vacayMouseEntered
+
+    private void btnjqjzSave_vacayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_vacayMouseExited
+        // TODO add your handling code here:
+        btnjqjzSave_vacay.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSave_vacayMouseExited
+
+    private void btnjqjzSave_vacayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_vacayMousePressed
+        // TODO add your handling code here:
+        btnjqjzSave_vacay.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_vacayMousePressed
+
+    private void btnjqjzSave_vacayMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_vacayMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSave_vacay.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSave_vacayMouseReleased
+
+    private void btnjqjzSearch_vacayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_vacayMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzVacayID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Vacation ID!");
+             txtjqjzVacayID.requestFocus();
+         }
+        else{
+             try {
+                strjqjzVacayID = txtjqjzVacayID.getText();
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) as totRec FROM tbljqjz_vacations WHERE Vacation_id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzVacayID);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                     //JOptionPane.showMessageDialog(null, numberOfRows);
+                    jqjznumberOfRows = (jqjzrs.getInt("totRec"));
+                }
+                if(jqjznumberOfRows == 1){
+                    jqjzstrSQL = "SELECT * FROM tbljqjz_vacations WHERE Vacation_id=?";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1,strjqjzVacayID);
+
+                    jqjzrs = jqjzpreparedStatement.executeQuery();
+                    
+                    while(jqjzrs.next()){
+                        //JOptionPane.showMessageDialog(null, numberOfRows);
+                        txtjqjzEmpID_vacay.setText(jqjzrs.getString("Employee_id"));
+                        txtjqjzVacayID.setText(jqjzrs.getString("Vacation_id"));
+                        txtjqjzVacayTitle.setText(jqjzrs.getString("Vacation_title"));
+                        dtpjqjzVacayFrom.setText(jqjzrs.getString("Vacation_from_date"));
+                        dtpjqjzVacayTo.setText(jqjzrs.getString("Vacation_to_date"));
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Record Does Not Exist!");
+                    txtjqjzEmpID_vacay.setText("");
+                    txtjqjzVacayID.setText("");
+                    txtjqjzVacayTitle.setText("");
+                    dtpjqjzVacayFrom.setText("");
+                    dtpjqjzVacayTo.setText("");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSearch_vacayMouseClicked
+
+    private void btnjqjzSearch_vacayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_vacayMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSearch_vacay.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_vacayMouseEntered
+
+    private void btnjqjzSearch_vacayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_vacayMouseExited
+        // TODO add your handling code here:
+        btnjqjzSearch_vacay.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSearch_vacayMouseExited
+
+    private void btnjqjzSearch_vacayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_vacayMousePressed
+        // TODO add your handling code here:
+        btnjqjzSearch_vacay.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_vacayMousePressed
+
+    private void btnjqjzSearch_vacayMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_vacayMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSearch_vacay.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSearch_vacayMouseReleased
+
+    private void btnjqjzUpdate_vacayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_vacayMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzVacayID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Vacation ID!");
+             txtjqjzVacayID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzEmpID_vacay = txtjqjzEmpID_vacay.getText();
+                strjqjzVacayID = txtjqjzVacayID.getText();
+                strjqjzVacayTitle = txtjqjzVacayTitle.getText();
+                strjqjzVacayFrom = dtpjqjzVacayFrom.getText();
+                strjqjzVacayTo = dtpjqjzVacayTo.getText();
+                
+                jqjzconn = jqjzC.makeConnection();
+                String jqjzupdateTableSQL = "UPDATE tbljqjz_vacations SET Vacation_title = ?,Vacation_from_date = ?,Vacation_to_date = ?,Employee_id = ?"
+                        + "WHERE Vacation_id = ?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzupdateTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzVacayTitle);
+                    jqjzpreparedStatement.setString(2, strjqjzVacayFrom);
+                    jqjzpreparedStatement.setString(3, strjqjzVacayTo);
+                    jqjzpreparedStatement.setString(4, strjqjzEmpID_vacay);
+                    jqjzpreparedStatement.setString(5, strjqjzVacayID);
+                    // execute update SQL stetement
+                    jqjzpreparedStatement.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Updated!");
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzUpdate_vacayMouseClicked
+
+    private void btnjqjzUpdate_vacayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_vacayMouseEntered
+        // TODO add your handling code here:
+        btnjqjzUpdate_vacay.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_vacayMouseEntered
+
+    private void btnjqjzUpdate_vacayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_vacayMouseExited
+        // TODO add your handling code here:
+        btnjqjzUpdate_vacay.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzUpdate_vacayMouseExited
+
+    private void btnjqjzUpdate_vacayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_vacayMousePressed
+        // TODO add your handling code here:
+        btnjqjzUpdate_vacay.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_vacayMousePressed
+
+    private void btnjqjzUpdate_vacayMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_vacayMouseReleased
+        // TODO add your handling code here:
+        btnjqjzUpdate_vacay.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzUpdate_vacayMouseReleased
+
+    private void btnjqjzDelete_vacayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_vacayMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzVacayID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Vacation ID!");
+             txtjqjzVacayID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzVacayID = txtjqjzVacayID.getText();
+
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "DELETE FROM tbljqjz_vacations WHERE Vacation_id = ?";;
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzVacayID);
+                    // execute delete SQL stetement
+                    jqjzpreparedStatement .executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Deleted!");
+                    txtjqjzEmpID_vacay.setText("");
+                    txtjqjzVacayID.setText("");
+                    txtjqjzVacayTitle.setText("");
+                    dtpjqjzVacayFrom.setText("");
+                    dtpjqjzVacayTo.setText("");                  
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzDelete_vacayMouseClicked
+
+    private void btnjqjzDelete_vacayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_vacayMouseEntered
+        // TODO add your handling code here:
+        btnjqjzDelete_vacay.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_vacayMouseEntered
+
+    private void btnjqjzDelete_vacayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_vacayMouseExited
+        // TODO add your handling code here:
+        btnjqjzDelete_vacay.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzDelete_vacayMouseExited
+
+    private void btnjqjzDelete_vacayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_vacayMousePressed
+        // TODO add your handling code here:
+        btnjqjzDelete_vacay.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_vacayMousePressed
+
+    private void btnjqjzDelete_vacayMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_vacayMouseReleased
+        // TODO add your handling code here:
+        btnjqjzDelete_vacay.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzDelete_vacayMouseReleased
+
+    private void btnjqjzClear_vacayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_vacayMouseClicked
+        // TODO add your handling code here:
+        txtjqjzEmpID_vacay.setText("");
+        txtjqjzVacayID.setText("");
+        txtjqjzVacayTitle.setText("");
+        dtpjqjzVacayFrom.setText("");
+        dtpjqjzVacayTo.setText("");     
+    }//GEN-LAST:event_btnjqjzClear_vacayMouseClicked
+
+    private void btnjqjzClear_vacayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_vacayMouseEntered
+        // TODO add your handling code here:
+        btnjqjzClear_vacay.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_vacayMouseEntered
+
+    private void btnjqjzClear_vacayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_vacayMouseExited
+        // TODO add your handling code here:
+        btnjqjzClear_vacay.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzClear_vacayMouseExited
+
+    private void btnjqjzClear_vacayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_vacayMousePressed
+        // TODO add your handling code here:
+        btnjqjzClear_vacay.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_vacayMousePressed
+
+    private void btnjqjzClear_vacayMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_vacayMouseReleased
+        // TODO add your handling code here:
+        btnjqjzClear_vacay.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzClear_vacayMouseReleased
+
+    private void btnjqjzSave_salMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_salMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzEmpID_sal.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Employee ID!");
+             txtjqjzEmpID_sal.requestFocus();
+         }
+         else if(txtjqjzSalID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Salary ID!");
+             txtjqjzSalID.requestFocus();
+         }
+         else if(txtjqjzSal.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Salary!");
+             txtjqjzSal.requestFocus();
+         }
+          else if(txtjqjzSalBonus.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Bonus!");
+             txtjqjzSalBonus.requestFocus();
+         }
+          else if(txtjqjzSalLoan.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Loan!");
+             txtjqjzSalLoan.requestFocus();
+         }
+          else if(dtpjqjzSalLastUpdate.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Last Update!");
+             dtpjqjzSalLastUpdate.requestFocus();
+         }
+         else{
+             try {
+                //intID = Integer.parseInt(txtID.getText());
+                strjqjzEmpID_sal = txtjqjzEmpID_sal.getText();
+                strjqjzSalID = txtjqjzSalID.getText();
+                strjqjzSal = txtjqjzSal.getText();
+                strjqjzSalBonus = txtjqjzSalBonus.getText();
+                strjqjzSalLoan = txtjqjzSalLoan.getText();
+                strjqjzSalLastUpdate = dtpjqjzSalLastUpdate.getDate().format(DateTimeFormatter.ofPattern("uuuu-MM-dd"));
+                
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) AS totRec FROM tbljqjz_salary WHERE id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzSalID);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                    jqjznumberOfRows = jqjzrs.getInt("totRec");
+                    //JOptionPane.showMessageDialog(null, numberOfRows);
+                }
+                if(jqjznumberOfRows == 1){
+                    JOptionPane.showMessageDialog(null, "Record Already Exist!");
+                }
+                else {
+                    String jqjzinsertTableSQL = "INSERT INTO tbljqjz_salary"
+                    + "(id, salary, bonus, loan, Last_update, Employee_id) VALUES"
+                    + "(?,?,?,?,?,?)";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzinsertTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzSalID);
+                    jqjzpreparedStatement.setString(2, strjqjzSal);
+                    jqjzpreparedStatement.setString(3, strjqjzSalBonus);
+                    jqjzpreparedStatement.setString(4, strjqjzSalLoan);
+                    jqjzpreparedStatement.setString(5, strjqjzSalLastUpdate);
+                    jqjzpreparedStatement.setString(6, strjqjzEmpID_sal);
+                    
+                    // execute insert SQL stetement
+                    jqjzpreparedStatement.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Saved!");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSave_salMouseClicked
+
+    private void btnjqjzSave_salMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_salMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSave_sal.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_salMouseEntered
+
+    private void btnjqjzSave_salMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_salMouseExited
+        // TODO add your handling code here:
+        btnjqjzSave_sal.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSave_salMouseExited
+
+    private void btnjqjzSave_salMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_salMousePressed
+        // TODO add your handling code here:
+        btnjqjzSave_sal.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_salMousePressed
+
+    private void btnjqjzSave_salMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_salMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSave_sal.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSave_salMouseReleased
+
+    private void btnjqjzSearch_salMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_salMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzSalID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Salary ID!");
+             txtjqjzSalID.requestFocus();
+         }
+        else{
+             try {
+                strjqjzSalID = txtjqjzSalID.getText();
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) as totRec FROM tbljqjz_salary WHERE id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzSalID);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                     //JOptionPane.showMessageDialog(null, numberOfRows);
+                    jqjznumberOfRows = (jqjzrs.getInt("totRec"));
+                }
+                if(jqjznumberOfRows == 1){
+                    jqjzstrSQL = "SELECT * FROM tbljqjz_salary WHERE id=?";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1,strjqjzSalID);
+
+                    jqjzrs = jqjzpreparedStatement.executeQuery();
+                    
+                    while(jqjzrs.next()){
+                        //JOptionPane.showMessageDialog(null, numberOfRows);
+                        txtjqjzEmpID_sal.setText(jqjzrs.getString("Employee_id"));
+                        txtjqjzSalID.setText(jqjzrs.getString("id"));
+                        txtjqjzSal.setText(jqjzrs.getString("salary"));
+                        txtjqjzSalBonus.setText(jqjzrs.getString("bonus"));
+                        txtjqjzSalLoan.setText(jqjzrs.getString("loan"));
+                        dtpjqjzSalLastUpdate.setText(jqjzrs.getString("Last_update"));
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Record Does Not Exist!");
+                    txtjqjzEmpID_sal.setText("");
+                    txtjqjzSalID.setText("");
+                    txtjqjzSal.setText("");
+                    txtjqjzSalBonus.setText("");
+                    txtjqjzSalLoan.setText("");
+                    dtpjqjzSalLastUpdate.setText("");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSearch_salMouseClicked
+
+    private void btnjqjzSearch_salMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_salMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSearch_sal.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_salMouseEntered
+
+    private void btnjqjzSearch_salMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_salMouseExited
+        // TODO add your handling code here:
+        btnjqjzSearch_sal.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSearch_salMouseExited
+
+    private void btnjqjzSearch_salMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_salMousePressed
+        // TODO add your handling code here:
+        btnjqjzSearch_sal.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_salMousePressed
+
+    private void btnjqjzSearch_salMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_salMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSearch_sal.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSearch_salMouseReleased
+
+    private void btnjqjzUpdate_salMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_salMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzSalID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Salary ID!");
+             txtjqjzSalID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzEmpID_sal = txtjqjzEmpID_sal.getText();
+                strjqjzSalID = txtjqjzSalID.getText();
+                strjqjzSal = txtjqjzSal.getText();
+                strjqjzSalBonus = txtjqjzSalBonus.getText();
+                strjqjzSalLoan = txtjqjzSalLoan.getText();
+                strjqjzSalLastUpdate = dtpjqjzSalLastUpdate.getDate().format(DateTimeFormatter.ofPattern("uuuu-MM-dd"));
+                
+                jqjzconn = jqjzC.makeConnection();
+                String jqjzupdateTableSQL = "UPDATE tbljqjz_salary SET salary = ?,bonus = ?,loan = ?,Last_update = ?,"
+                        + "Employee_id = ? WHERE id = ?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzupdateTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzSal);
+                    jqjzpreparedStatement.setString(2, strjqjzSalBonus);
+                    jqjzpreparedStatement.setString(3, strjqjzSalLoan);
+                    jqjzpreparedStatement.setString(4, strjqjzSalLastUpdate);
+                    jqjzpreparedStatement.setString(5, strjqjzEmpID_sal);
+                    jqjzpreparedStatement.setString(6, strjqjzSalID);
+                    // execute update SQL stetement
+                    jqjzpreparedStatement.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Updated!");
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzUpdate_salMouseClicked
+
+    private void btnjqjzUpdate_salMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_salMouseEntered
+        // TODO add your handling code here:
+        btnjqjzUpdate_sal.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_salMouseEntered
+
+    private void btnjqjzUpdate_salMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_salMouseExited
+        // TODO add your handling code here:
+        btnjqjzUpdate_sal.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzUpdate_salMouseExited
+
+    private void btnjqjzUpdate_salMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_salMousePressed
+        // TODO add your handling code here:
+        btnjqjzUpdate_sal.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_salMousePressed
+
+    private void btnjqjzUpdate_salMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_salMouseReleased
+        // TODO add your handling code here:
+        btnjqjzUpdate_sal.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzUpdate_salMouseReleased
+
+    private void btnjqjzDelete_salMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_salMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzSalID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Salary ID!");
+             txtjqjzSalID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzSalID = txtjqjzSalID.getText();
+
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "DELETE FROM tbljqjz_salary WHERE id = ?";;
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzSalID);
+                    // execute delete SQL stetement
+                    jqjzpreparedStatement .executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Deleted!");
+                    txtjqjzEmpID_sal.setText("");
+                    txtjqjzSalID.setText("");
+                    txtjqjzSal.setText("");
+                    txtjqjzSalBonus.setText("");
+                    txtjqjzSalLoan.setText("");
+                    dtpjqjzSalLastUpdate.setText("");                  
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzDelete_salMouseClicked
+
+    private void btnjqjzDelete_salMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_salMouseEntered
+        // TODO add your handling code here:
+        btnjqjzDelete_sal.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_salMouseEntered
+
+    private void btnjqjzDelete_salMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_salMouseExited
+        // TODO add your handling code here:
+        btnjqjzDelete_sal.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzDelete_salMouseExited
+
+    private void btnjqjzDelete_salMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_salMousePressed
+        // TODO add your handling code here:
+        btnjqjzDelete_sal.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_salMousePressed
+
+    private void btnjqjzDelete_salMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_salMouseReleased
+        // TODO add your handling code here:
+         btnjqjzDelete_sal.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzDelete_salMouseReleased
+
+    private void btnjqjzClear_salMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_salMouseClicked
+        // TODO add your handling code here:
+        txtjqjzEmpID_sal.setText("");
+        txtjqjzSalID.setText("");
+        txtjqjzSal.setText("");
+        txtjqjzSalBonus.setText("");
+        txtjqjzSalLoan.setText("");
+        dtpjqjzSalLastUpdate.setText("");    
+    }//GEN-LAST:event_btnjqjzClear_salMouseClicked
+
+    private void btnjqjzClear_salMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_salMouseEntered
+        // TODO add your handling code here:
+        btnjqjzClear_sal.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_salMouseEntered
+
+    private void btnjqjzClear_salMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_salMouseExited
+        // TODO add your handling code here:
+        btnjqjzClear_sal.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzClear_salMouseExited
+
+    private void btnjqjzClear_salMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_salMousePressed
+        // TODO add your handling code here:
+        btnjqjzClear_sal.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_salMousePressed
+
+    private void btnjqjzClear_salMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_salMouseReleased
+        // TODO add your handling code here:
+        btnjqjzClear_sal.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzClear_salMouseReleased
+
+    private void btnjqjzSave_attendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_attendMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzAttendID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Attendance ID!");
+             txtjqjzAttendID.requestFocus();
+         }
+         else if(txtjqjzEmpID_attend.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Employee ID!");
+             txtjqjzEmpID_attend.requestFocus();
+         }
+         else if(txtjqjzAttendType.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Attendance Type!");
+             txtjqjzAttendType.requestFocus();
+         }
+          else if(txtjqjzAttendDateTime.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Attendance Time & Date!");
+             txtjqjzAttendDateTime.requestFocus();
+         }
+         else{
+             try {
+                //intID = Integer.parseInt(txtID.getText());
+                strjqjzAttendID = txtjqjzAttendID.getText();
+                strjqjzEmpID_attend = txtjqjzEmpID_attend.getText();
+                strjqjzAttendType = txtjqjzAttendType.getText();
+                strjqjzAttendDateTime = txtjqjzAttendDateTime.getText();
+                
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) AS totRec FROM tbljqjz_attendance WHERE id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzAttendID);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                    jqjznumberOfRows = jqjzrs.getInt("totRec");
+                    //JOptionPane.showMessageDialog(null, numberOfRows);
+                }
+                if(jqjznumberOfRows == 1){
+                    JOptionPane.showMessageDialog(null, "Record Already Exist!");
+                }
+                else {
+                    String jqjzinsertTableSQL = "INSERT INTO tbljqjz_attendance"
+                    + "(id, Att_type, Att_time_date, Employee_id) VALUES"
+                    + "(?,?,?,?)";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzinsertTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzAttendID);
+                    jqjzpreparedStatement.setString(2, strjqjzAttendType);
+                    jqjzpreparedStatement.setString(3, strjqjzAttendDateTime);
+                    jqjzpreparedStatement.setString(4, strjqjzEmpID_attend);
+                    
+                    // execute insert SQL stetement
+                    jqjzpreparedStatement.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Saved!");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSave_attendMouseClicked
+
+    private void btnjqjzSave_attendMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_attendMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSave_attend.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_attendMouseEntered
+
+    private void btnjqjzSave_attendMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_attendMouseExited
+        // TODO add your handling code here:
+        btnjqjzSave_attend.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSave_attendMouseExited
+
+    private void btnjqjzSave_attendMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_attendMousePressed
+        // TODO add your handling code here:
+        btnjqjzSave_attend.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_attendMousePressed
+
+    private void btnjqjzSave_attendMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_attendMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSave_attend.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSave_attendMouseReleased
+
+    private void btnjqjzSearch_attendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_attendMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzAttendID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Attendance ID!");
+             txtjqjzAttendID.requestFocus();
+         }
+        else{
+             try {
+                strjqjzAttendID = txtjqjzAttendID.getText();
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) as totRec FROM tbljqjz_attendance WHERE id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzAttendID);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                     //JOptionPane.showMessageDialog(null, numberOfRows);
+                    jqjznumberOfRows = (jqjzrs.getInt("totRec"));
+                }
+                if(jqjznumberOfRows == 1){
+                    jqjzstrSQL = "SELECT * FROM tbljqjz_attendance WHERE id=?";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1,strjqjzAttendID);
+
+                    jqjzrs = jqjzpreparedStatement.executeQuery();
+                    
+                    while(jqjzrs.next()){
+                        //JOptionPane.showMessageDialog(null, numberOfRows);
+                        txtjqjzAttendID.setText(jqjzrs.getString("id"));
+                        txtjqjzAttendType.setText(jqjzrs.getString("Att_type"));
+                        txtjqjzAttendDateTime.setText(jqjzrs.getString("Att_time_date"));
+                        txtjqjzEmpID_attend.setText(jqjzrs.getString("Employee_id"));
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Record Does Not Exist!");
+                    txtjqjzAttendID.setText("");
+                    txtjqjzAttendType.setText("");
+                    txtjqjzAttendDateTime.setText("");
+                    txtjqjzEmpID_attend.setText("");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSearch_attendMouseClicked
+
+    private void btnjqjzSearch_attendMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_attendMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSearch_attend.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_attendMouseEntered
+
+    private void btnjqjzSearch_attendMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_attendMouseExited
+        // TODO add your handling code here:
+        btnjqjzSearch_attend.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSearch_attendMouseExited
+
+    private void btnjqjzSearch_attendMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_attendMousePressed
+        // TODO add your handling code here:
+        btnjqjzSearch_attend.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_attendMousePressed
+
+    private void btnjqjzSearch_attendMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_attendMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSearch_attend.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSearch_attendMouseReleased
+
+    private void btnjqjzUpdate_attendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_attendMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzAttendID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Attendance ID!");
+             txtjqjzAttendID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzAttendID = txtjqjzAttendID.getText();
+                strjqjzEmpID_attend = txtjqjzEmpID_attend.getText();
+                strjqjzAttendType = txtjqjzAttendType.getText();
+                strjqjzAttendDateTime = txtjqjzAttendDateTime.getText();
+                
+                jqjzconn = jqjzC.makeConnection();
+                String jqjzupdateTableSQL = "UPDATE tbljqjz_attendance SET Att_type = ?,Att_time_date = ?,Employee_id = ?"
+                        + "WHERE id = ?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzupdateTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzAttendType);
+                    jqjzpreparedStatement.setString(2, strjqjzAttendDateTime);
+                    jqjzpreparedStatement.setString(3, strjqjzEmpID_attend);
+                    jqjzpreparedStatement.setString(4, strjqjzAttendID);
+                    // execute update SQL stetement
+                    jqjzpreparedStatement.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Updated!");
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzUpdate_attendMouseClicked
+
+    private void btnjqjzUpdate_attendMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_attendMouseEntered
+        // TODO add your handling code here:
+        btnjqjzUpdate_attend.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_attendMouseEntered
+
+    private void btnjqjzUpdate_attendMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_attendMouseExited
+        // TODO add your handling code here:
+        btnjqjzUpdate_attend.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzUpdate_attendMouseExited
+
+    private void btnjqjzUpdate_attendMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_attendMousePressed
+        // TODO add your handling code here:
+        btnjqjzUpdate_attend.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_attendMousePressed
+
+    private void btnjqjzUpdate_attendMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_attendMouseReleased
+        // TODO add your handling code here:
+        btnjqjzUpdate_attend.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzUpdate_attendMouseReleased
+
+    private void btnjqjzDelete_attendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_attendMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzAttendID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Attendance ID!");
+             txtjqjzAttendID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzAttendID = txtjqjzAttendID.getText();
+
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "DELETE FROM tbljqjz_attendance WHERE id = ?";;
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzAttendID);
+                    // execute delete SQL stetement
+                    jqjzpreparedStatement .executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Deleted!");
+                    txtjqjzAttendID.setText("");
+                    txtjqjzEmpID_attend.setText("");
+                    txtjqjzAttendType.setText("");
+                    txtjqjzAttendDateTime.setText("");                  
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzDelete_attendMouseClicked
+
+    private void btnjqjzDelete_attendMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_attendMouseEntered
+        // TODO add your handling code here:
+        btnjqjzDelete_attend.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_attendMouseEntered
+
+    private void btnjqjzDelete_attendMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_attendMouseExited
+        // TODO add your handling code here:
+        btnjqjzDelete_attend.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzDelete_attendMouseExited
+
+    private void btnjqjzDelete_attendMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_attendMousePressed
+        // TODO add your handling code here:
+        btnjqjzDelete_attend.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_attendMousePressed
+
+    private void btnjqjzDelete_attendMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_attendMouseReleased
+        // TODO add your handling code here:
+        btnjqjzDelete_attend.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzDelete_attendMouseReleased
+
+    private void btnjqjz_ClearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_ClearMouseClicked
+        // TODO add your handling code here:
+        txtjqjzAttendID.setText("");
+        txtjqjzEmpID_attend.setText("");
+        txtjqjzAttendType.setText("");
+        txtjqjzAttendDateTime.setText("");
+    }//GEN-LAST:event_btnjqjz_ClearMouseClicked
+
+    private void btnjqjz_ClearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_ClearMouseEntered
+        // TODO add your handling code here:
+        btnjqjz_Clear.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjz_ClearMouseEntered
+
+    private void btnjqjz_ClearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_ClearMouseExited
+        // TODO add your handling code here:
+        btnjqjz_Clear.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjz_ClearMouseExited
+
+    private void btnjqjz_ClearMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_ClearMousePressed
+        // TODO add your handling code here:
+        btnjqjz_Clear.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjz_ClearMousePressed
+
+    private void btnjqjz_ClearMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_ClearMouseReleased
+        // TODO add your handling code here:
+        btnjqjz_Clear.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjz_ClearMouseReleased
+
+    private void btnjqjzSave_evalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_evalMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzEvalID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Evaluation ID!");
+             txtjqjzEvalID.requestFocus();
+         }
+         else if(txtjqjzUserID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter User ID!");
+             txtjqjzUserID.requestFocus();
+         }
+         else if(txtjqjzEvalValue.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Evaluation Value!");
+             txtjqjzEvalValue.requestFocus();
+         }
+         else{
+             try {
+                //intID = Integer.parseInt(txtID.getText());
+                strjqjzEvalID = txtjqjzEvalID.getText();
+                strjqjzUserID = txtjqjzUserID.getText();
+                strjqjzEvalValue = txtjqjzEvalValue.getText();
+                
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) AS totRec FROM tbljqjz_evaluation WHERE Eval_id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzEvalID);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                    jqjznumberOfRows = jqjzrs.getInt("totRec");
+                    //JOptionPane.showMessageDialog(null, numberOfRows);
+                }
+                if(jqjznumberOfRows == 1){
+                    JOptionPane.showMessageDialog(null, "Record Already Exist!");
+                }
+                else {
+                    String jqjzinsertTableSQL = "INSERT INTO tbljqjz_evaluation"
+                    + "(Eval_id, User_id, Eval_value) VALUES"
+                    + "(?,?,?)";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzinsertTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzEvalID);
+                    jqjzpreparedStatement.setString(2, strjqjzUserID);
+                    jqjzpreparedStatement.setString(3, strjqjzEvalValue);
+                    
+                    // execute insert SQL stetement
+                    jqjzpreparedStatement .executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Saved!");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSave_evalMouseClicked
+
+    private void btnjqjzSave_evalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_evalMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSave_eval.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_evalMouseEntered
+
+    private void btnjqjzSave_evalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_evalMouseExited
+        // TODO add your handling code here:
+        btnjqjzSave_eval.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSave_evalMouseExited
+
+    private void btnjqjzSave_evalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_evalMousePressed
+        // TODO add your handling code here:
+        btnjqjzSave_eval.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_evalMousePressed
+
+    private void btnjqjzSave_evalMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_evalMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSave_eval.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSave_evalMouseReleased
+
+    private void btnjqjzSearch_evalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_evalMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzEvalID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Evaluation ID!");
+             txtjqjzEvalID.requestFocus();
+         }
+        else{
+             try {
+                strjqjzEvalID = txtjqjzEvalID.getText();
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) as totRec FROM tbljqjz_evaluation WHERE Eval_id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzEvalID);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                     //JOptionPane.showMessageDialog(null, numberOfRows);
+                    jqjznumberOfRows = (jqjzrs.getInt("totRec"));
+                }
+                if(jqjznumberOfRows == 1){
+                    jqjzstrSQL = "SELECT * FROM tbljqjz_evaluation WHERE Eval_id=?";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1,strjqjzEvalID);
+
+                    jqjzrs = jqjzpreparedStatement.executeQuery();
+                    
+                    while(jqjzrs.next()){
+                        //JOptionPane.showMessageDialog(null, numberOfRows);
+                        txtjqjzEvalID.setText(jqjzrs.getString("Eval_id"));
+                        txtjqjzUserID.setText(jqjzrs.getString("User_id"));
+                        txtjqjzEvalValue.setText(jqjzrs.getString("Eval_value"));
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Record Does Not Exist!");
+                    txtjqjzEvalID.setText("");
+                    txtjqjzUserID.setText("");
+                    txtjqjzEvalValue.setText("");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSearch_evalMouseClicked
+
+    private void btnjqjzSearch_evalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_evalMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSearch_eval.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_evalMouseEntered
+
+    private void btnjqjzSearch_evalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_evalMouseExited
+        // TODO add your handling code here:
+        btnjqjzSearch_eval.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSearch_evalMouseExited
+
+    private void btnjqjzSearch_evalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_evalMousePressed
+        // TODO add your handling code here:
+        btnjqjzSearch_eval.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_evalMousePressed
+
+    private void btnjqjzSearch_evalMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_evalMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSearch_eval.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSearch_evalMouseReleased
+
+    private void btnjqjzUpdate_evalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_evalMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzEvalID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Evaluation ID!");
+             txtjqjzEvalID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzEvalID = txtjqjzEvalID.getText();
+                strjqjzUserID = txtjqjzUserID.getText();
+                strjqjzEvalValue = txtjqjzEvalValue.getText();
+                
+                jqjzconn = jqjzC.makeConnection();
+                String jqjzupdateTableSQL = "UPDATE tbljqjz_evaluation SET User_id = ?,Eval_value=?"
+                        + "WHERE Eval_id = ?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzupdateTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzUserID);
+                    jqjzpreparedStatement.setString(2, strjqjzEvalValue);
+                    jqjzpreparedStatement.setString(3, strjqjzEvalID);
+                    // execute update SQL stetement
+                    jqjzpreparedStatement.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Updated!");
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzUpdate_evalMouseClicked
+
+    private void btnjqjzUpdate_evalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_evalMouseEntered
+        // TODO add your handling code here:
+        btnjqjzUpdate_eval.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_evalMouseEntered
+
+    private void btnjqjzUpdate_evalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_evalMouseExited
+        // TODO add your handling code here:
+        btnjqjzUpdate_eval.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzUpdate_evalMouseExited
+
+    private void btnjqjzUpdate_evalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_evalMousePressed
+        // TODO add your handling code here:
+        btnjqjzUpdate_eval.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_evalMousePressed
+
+    private void btnjqjzUpdate_evalMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_evalMouseReleased
+        // TODO add your handling code here:
+        btnjqjzUpdate_eval.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzUpdate_evalMouseReleased
+
+    private void btnjqjzDelete_evalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_evalMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzEvalID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Evaluation ID!");
+             txtjqjzEvalID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzEvalID = txtjqjzEvalID.getText();
+
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "DELETE FROM tbljqjz_evaluation WHERE Eval_id = ?";;
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzEvalID);
+                    // execute delete SQL stetement
+                    jqjzpreparedStatement .executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Deleted!");
+                    txtjqjzEvalID.setText("");
+                    txtjqjzUserID.setText("");
+                    txtjqjzEvalValue.setText("");                  
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzDelete_evalMouseClicked
+
+    private void btnjqjzDelete_evalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_evalMouseEntered
+        // TODO add your handling code here:
+        btnjqjzDelete_eval.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_evalMouseEntered
+
+    private void btnjqjzDelete_evalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_evalMouseExited
+        // TODO add your handling code here:
+        btnjqjzDelete_eval.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzDelete_evalMouseExited
+
+    private void btnjqjzDelete_evalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_evalMousePressed
+        // TODO add your handling code here:
+        btnjqjzDelete_eval.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_evalMousePressed
+
+    private void btnjqjzDelete_evalMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_evalMouseReleased
+        // TODO add your handling code here:
+        btnjqjzDelete_eval.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzDelete_evalMouseReleased
+
+    private void btnjqjzClear_evalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_evalMouseClicked
+        // TODO add your handling code here:
+        txtjqjzEvalID.setText("");
+        txtjqjzUserID.setText("");
+        txtjqjzEvalValue.setText("");  
+    }//GEN-LAST:event_btnjqjzClear_evalMouseClicked
+
+    private void btnjqjzClear_evalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_evalMouseEntered
+        // TODO add your handling code here:
+        btnjqjzClear_eval.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_evalMouseEntered
+
+    private void btnjqjzClear_evalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_evalMouseExited
+        // TODO add your handling code here:
+        btnjqjzClear_eval.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzClear_evalMouseExited
+
+    private void btnjqjzClear_evalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_evalMousePressed
+        // TODO add your handling code here:
+        btnjqjzClear_eval.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_evalMousePressed
+
+    private void btnjqjzClear_evalMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_evalMouseReleased
+        // TODO add your handling code here:
+        btnjqjzClear_eval.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzClear_evalMouseReleased
+
+    private void btnjqjzSearch_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_userMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzUserID_user.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter User ID!");
+             txtjqjzUserID_user.requestFocus();
+         }
+        else{
+             try {
+                strjqjzUserID_user = txtjqjzUserID_user.getText();
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) as totRec FROM tbljqjz_user WHERE id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzUserID_user);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                     //JOptionPane.showMessageDialog(null, numberOfRows);
+                    jqjznumberOfRows = (jqjzrs.getInt("totRec"));
+                }
+                if(jqjznumberOfRows == 1){
+                    jqjzstrSQL = "SELECT * FROM tbljqjz_user WHERE id=?";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1,strjqjzUserID_user);
+
+                    jqjzrs = jqjzpreparedStatement.executeQuery();
+                    
+                    while(jqjzrs.next()){
+                        //JOptionPane.showMessageDialog(null, numberOfRows);
+                        txtjqjzUserID_user.setText(jqjzrs.getString("id"));
+                        txtjqjzUsername.setText(jqjzrs.getString("User_name"));
+                        txtjqjzUserLName.setText(jqjzrs.getString("Last_name"));
+                        txtjqjzUserFName.setText(jqjzrs.getString("First_name"));
+                        txtjqjzUserMName.setText(jqjzrs.getString("Middle_name"));
+                        pwjqjzUserPass.setText(jqjzrs.getString("Password"));
+                        txtjqjzUserGender.setText(jqjzrs.getString("Gender"));
+                        txtjqjzUserEmail.setText(jqjzrs.getString("User_type_id"));
+                        txtjqjzUserEmail.setText(jqjzrs.getString("Email_address"));
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Record Does Not Exist!");
+                    txtjqjzUserID_user.setText("");
+                    txtjqjzUsername.setText("");
+                    txtjqjzUserLName.setText("");
+                    txtjqjzUserFName.setText("");
+                    txtjqjzUserMName.setText("");
+                    pwjqjzUserPass.setText("");
+                    txtjqjzUserGender.setText("");
+                    txtjqjzUserEmail.setText("");
+                    txtjqjzUserEmail.setText("");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSearch_userMouseClicked
+
+    private void btnjqjzSearch_userMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_userMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSearch_user.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_userMouseEntered
+
+    private void btnjqjzSearch_userMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_userMouseExited
+        // TODO add your handling code here:
+        btnjqjzSearch_user.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSearch_userMouseExited
+
+    private void btnjqjzSearch_userMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_userMousePressed
+        // TODO add your handling code here:
+        btnjqjzSearch_user.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_userMousePressed
+
+    private void btnjqjzSearch_userMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_userMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSearch_user.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSearch_userMouseReleased
+
+    private void btnjqjzSave_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_userMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzUserID_user.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter User ID!");
+             txtjqjzUserID_user.requestFocus();
+        }
+        else if(txtjqjzUsername.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter User Name!");
+             txtjqjzUsername.requestFocus();
+        }
+        else if(txtjqjzUserLName.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Last Name!");
+             txtjqjzUserLName.requestFocus();
+        }
+        else if(txtjqjzUserFName.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter First Name!");
+             txtjqjzUserFName.requestFocus();
+        }
+        else if(txtjqjzUserMName.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Middle Name!");
+             txtjqjzUserMName.requestFocus();
+        }
+        else if(txtjqjzUserGender.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Specify Gender!");
+             txtjqjzUserGender.requestFocus();
+        }
+        else if(txtjqjzUserTypeID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Specify User Type ID!");
+             txtjqjzUserTypeID.requestFocus();
+        }
+        else if(txtjqjzUserEmail.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Email Address!");
+             txtjqjzUserEmail.requestFocus();
+        }
+        else if(pwjqjzUserPass.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Password!");
+             pwjqjzUserPass.requestFocus();
+        }
+        else{
+             try {
+                //intID = Integer.parseInt(txtID.getText());
+                strjqjzUserID_user = txtjqjzUserID_user.getText();
+                strjqjzUsername = txtjqjzUsername.getText();
+                strjqjzUserLName = txtjqjzUserLName.getText();
+                strjqjzUserFName = txtjqjzUserFName.getText();
+                strjqjzUserMName = txtjqjzUserMName.getText();
+                strjqjzUserGender = txtjqjzUserGender.getText();
+                strjqjzUserEmail = txtjqjzUserEmail.getText();
+                strjqjzUserTypeID = txtjqjzUserTypeID.getText();
+                strjqjzUserPass = pwjqjzUserPass.getText();
+                
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) AS totRec FROM tbljqjz_user WHERE id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzUserID_user);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                    jqjznumberOfRows = jqjzrs.getInt("totRec");
+                    //JOptionPane.showMessageDialog(null, numberOfRows);
+                }
+                if(jqjznumberOfRows == 1){
+                    JOptionPane.showMessageDialog(null, "Record Already Exist!");
+                }
+                else {
+                    String jqjzinsertTableSQL = "INSERT INTO tbljqjz_user"
+                    + "(id, User_name, Last_name, First_name, Middle_name, Gender, Email_address, User_type_id, Password) VALUES"
+                    + "(?,?,?,?,?,?,?,?,?)";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzinsertTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzUserID_user);
+                    jqjzpreparedStatement.setString(2, strjqjzUsername);
+                    jqjzpreparedStatement.setString(3, strjqjzUserLName);
+                    jqjzpreparedStatement.setString(4, strjqjzUserFName);
+                    jqjzpreparedStatement.setString(5, strjqjzUserMName);
+                    jqjzpreparedStatement.setString(6, strjqjzUserGender);
+                    jqjzpreparedStatement.setString(7, strjqjzUserEmail);
+                    jqjzpreparedStatement.setString(8, strjqjzUserTypeID);
+                    jqjzpreparedStatement.setString(9, strjqjzUserPass);
+                    // execute insert SQL stetement
+                    jqjzpreparedStatement.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Saved!");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSave_userMouseClicked
+
+    private void btnjqjzSave_userMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_userMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSave_user.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_userMouseEntered
+
+    private void btnjqjzSave_userMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_userMouseExited
+        // TODO add your handling code here:
+        btnjqjzSave_user.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSave_userMouseExited
+
+    private void btnjqjzSave_userMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_userMousePressed
+        // TODO add your handling code here:
+        btnjqjzSave_user.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_userMousePressed
+
+    private void btnjqjzSave_userMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_userMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSave_user.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSave_userMouseReleased
+
+    private void btnjqjzUpdate_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_userMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzUserID_user.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter User ID!");
+             txtjqjzUserID_user.requestFocus();
+        }
+        else{
+            try{
+                strjqjzUserID_user = txtjqjzUserID_user.getText();
+                strjqjzUsername = txtjqjzUsername.getText();
+                strjqjzUserLName = txtjqjzUserLName.getText();
+                strjqjzUserFName = txtjqjzUserFName.getText();
+                strjqjzUserMName = txtjqjzUserMName.getText();
+                strjqjzUserGender = txtjqjzUserGender.getText();
+                strjqjzUserEmail = txtjqjzUserEmail.getText();
+                strjqjzUserTypeID = txtjqjzUserTypeID.getText();
+                strjqjzUserPass = pwjqjzUserPass.getText();
+                
+                jqjzconn = jqjzC.makeConnection();
+                String jqjzupdateTableSQL = "UPDATE tbljqjz_user SET User_name = ?,Last_name = ?,First_name = ?,Middle_name = ?,"
+                        + "Gender = ?, Email_address=?, User_type_id=?, Password=? WHERE id = ?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzupdateTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzUsername);
+                    jqjzpreparedStatement.setString(2, strjqjzUserLName);
+                    jqjzpreparedStatement.setString(3, strjqjzUserFName);
+                    jqjzpreparedStatement.setString(4, strjqjzUserMName);
+                    jqjzpreparedStatement.setString(5, strjqjzUserGender);
+                    jqjzpreparedStatement.setString(6, strjqjzUserEmail);
+                    jqjzpreparedStatement.setString(7, strjqjzUserTypeID);
+                    jqjzpreparedStatement.setString(8, strjqjzUserPass);
+                    jqjzpreparedStatement.setString(9, strjqjzUserID_user);
+                    // execute update SQL stetement
+                    jqjzpreparedStatement.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Updated!");
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzUpdate_userMouseClicked
+
+    private void btnjqjzUpdate_userMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_userMouseEntered
+        // TODO add your handling code here:
+        btnjqjzUpdate_user.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_userMouseEntered
+
+    private void btnjqjzUpdate_userMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_userMouseExited
+        // TODO add your handling code here:
+        btnjqjzUpdate_user.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzUpdate_userMouseExited
+
+    private void btnjqjzUpdate_userMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_userMousePressed
+        // TODO add your handling code here:
+        btnjqjzUpdate_user.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_userMousePressed
+
+    private void btnjqjzUpdate_userMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_userMouseReleased
+        // TODO add your handling code here:
+        btnjqjzUpdate_user.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzUpdate_userMouseReleased
+
+    private void btnjqjzClear_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_userMouseClicked
+        // TODO add your handling code here:
+        txtjqjzUserID_user.setText("");
+        txtjqjzUsername.setText("");
+        txtjqjzUserLName.setText("");
+        txtjqjzUserFName.setText("");
+        txtjqjzUserMName.setText("");
+        pwjqjzUserPass.setText("");
+        txtjqjzUserGender.setText("");
+        txtjqjzUserTypeID.setText("");
+        txtjqjzUserEmail.setText("");
+    }//GEN-LAST:event_btnjqjzClear_userMouseClicked
+
+    private void btnjqjzClear_userMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_userMouseEntered
+        // TODO add your handling code here:
+        btnjqjzClear_user.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_userMouseEntered
+
+    private void btnjqjzClear_userMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_userMouseExited
+        // TODO add your handling code here:
+        btnjqjzClear_user.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzClear_userMouseExited
+
+    private void btnjqjzClear_userMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_userMousePressed
+        // TODO add your handling code here:
+        btnjqjzClear_user.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_userMousePressed
+
+    private void btnjqjzClear_userMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_userMouseReleased
+        // TODO add your handling code here:
+        btnjqjzClear_user.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzClear_userMouseReleased
+
+    private void btnjqjzDelete_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_userMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzUserID_user.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please User ID!");
+             txtjqjzUserID_user.requestFocus();
+        }
+        else{
+            try{
+                strjqjzUserID_user = txtjqjzUserID_user.getText();
+
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "DELETE FROM tbljqjz_user WHERE id = ?";;
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzUserID_user);
+                    // execute delete SQL stetement
+                    jqjzpreparedStatement .executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Deleted!");
+                    txtjqjzUserID_user.setText("");
+                    txtjqjzUsername.setText("");
+                    txtjqjzUserLName.setText("");
+                    txtjqjzUserFName.setText("");
+                    txtjqjzUserMName.setText("");
+                    pwjqjzUserPass.setText("");
+                    txtjqjzUserGender.setText("");
+                    txtjqjzUserTypeID.setText("");
+                    txtjqjzUserEmail.setText("");                  
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzDelete_userMouseClicked
+
+    private void btnjqjzDelete_userMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_userMouseEntered
+        // TODO add your handling code here:
+        btnjqjzDelete_user.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_userMouseEntered
+
+    private void btnjqjzDelete_userMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_userMouseExited
+        // TODO add your handling code here:
+        btnjqjzDelete_user.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzDelete_userMouseExited
+
+    private void btnjqjzDelete_userMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_userMousePressed
+        // TODO add your handling code here:
+        btnjqjzDelete_user.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_userMousePressed
+
+    private void btnjqjzDelete_userMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_userMouseReleased
+        // TODO add your handling code here:
+        btnjqjzDelete_user.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzDelete_userMouseReleased
+
+    private void lblmenu_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblmenu_userMouseClicked
+        // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(8);
+    }//GEN-LAST:event_lblmenu_userMouseClicked
+
+    private void lblmenu_userMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblmenu_userMouseEntered
+        // TODO add your handling code here:
+        menu_user.setBackground(new java.awt.Color(247,229,214));
+    }//GEN-LAST:event_lblmenu_userMouseEntered
+
+    private void lblmenu_userMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblmenu_userMouseExited
+        // TODO add your handling code here:
+        menu_user.setBackground(new java.awt.Color(235,218,204));
+    }//GEN-LAST:event_lblmenu_userMouseExited
+
+    private void lblmenu_userMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblmenu_userMousePressed
+        // TODO add your handling code here:
+        menu_user.setBackground(new java.awt.Color(219,172,132));
+    }//GEN-LAST:event_lblmenu_userMousePressed
+
+    private void lblmenu_userMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblmenu_userMouseReleased
+        // TODO add your handling code here:
+        menu_user.setBackground(new java.awt.Color(232,182,138));
+    }//GEN-LAST:event_lblmenu_userMouseReleased
+
+    private void btnjqjz_usertypeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_usertypeMouseClicked
+        // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(9);
+    }//GEN-LAST:event_btnjqjz_usertypeMouseClicked
+
+    private void btnjqjz_usertypeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_usertypeMouseEntered
+        // TODO add your handling code here:
+        btnjqjz_usertype.setBackground(new java.awt.Color(178,121,74));
+        btnjqjz_usertype.setForeground(new java.awt.Color(255,255,255));
+    }//GEN-LAST:event_btnjqjz_usertypeMouseEntered
+
+    private void btnjqjz_usertypeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_usertypeMouseExited
+        // TODO add your handling code here:
+        btnjqjz_usertype.setBackground(new java.awt.Color(255, 255, 255));
+        btnjqjz_usertype.setForeground(new java.awt.Color(178, 121, 74));
+        btnjqjz_usertype.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(178, 121, 74)));
+    }//GEN-LAST:event_btnjqjz_usertypeMouseExited
+
+    private void btnjqjz_usertypeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_usertypeMousePressed
+        // TODO add your handling code here:
+        btnjqjz_usertype.setBackground(new java.awt.Color(178,121,74));
+        btnjqjz_usertype.setForeground(new java.awt.Color(255,255,255));
+    }//GEN-LAST:event_btnjqjz_usertypeMousePressed
+
+    private void btnjqjz_usertypeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_usertypeMouseReleased
+        // TODO add your handling code here:
+        btnjqjz_usertype.setForeground(new java.awt.Color(255,255,255));
+        btnjqjz_usertype.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(178,124,90)));
+    }//GEN-LAST:event_btnjqjz_usertypeMouseReleased
+
+    private void btnjqjzSearch_usertypeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_usertypeMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzUserType_ID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter User ID!");
+             txtjqjzUserType_ID.requestFocus();
+         }
+        else{
+             try {
+                strjqjzUserType_ID = txtjqjzUserType_ID.getText();
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) as totRec FROM tbljqjz_usertype WHERE id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzUserType_ID);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                     //JOptionPane.showMessageDialog(null, numberOfRows);
+                    jqjznumberOfRows = (jqjzrs.getInt("totRec"));
+                }
+                if(jqjznumberOfRows == 1){
+                    jqjzstrSQL = "SELECT * FROM tbljqjz_usertype WHERE id=?";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1,strjqjzUserType_ID);
+
+                    jqjzrs = jqjzpreparedStatement.executeQuery();
+                    
+                    while(jqjzrs.next()){
+                        //JOptionPane.showMessageDialog(null, numberOfRows);
+                        txtjqjzUserType_ID.setText(jqjzrs.getString("id"));
+                        txtjqjzUserType_name.setText(jqjzrs.getString("name"));
+                        txtjqjzUserType_desc.setText(jqjzrs.getString("description"));
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Record Does Not Exist!");
+                    txtjqjzUserType_ID.setText("");
+                    txtjqjzUserType_name.setText("");
+                    txtjqjzUserType_desc.setText("");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSearch_usertypeMouseClicked
+
+    private void btnjqjzSearch_usertypeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_usertypeMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSearch_usertype.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_usertypeMouseEntered
+
+    private void btnjqjzSearch_usertypeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_usertypeMouseExited
+        // TODO add your handling code here:
+        btnjqjzSearch_usertype.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSearch_usertypeMouseExited
+
+    private void btnjqjzSearch_usertypeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_usertypeMousePressed
+        // TODO add your handling code here:
+        btnjqjzSearch_usertype.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSearch_usertypeMousePressed
+
+    private void btnjqjzSearch_usertypeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSearch_usertypeMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSearch_usertype.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSearch_usertypeMouseReleased
+
+    private void btnjqjzSave_usertypeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_usertypeMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzUserType_ID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter User ID!");
+             txtjqjzUserType_ID.requestFocus();
+         }
+         else if(txtjqjzUserType_name.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Name!");
+             txtjqjzUserType_name.requestFocus();
+         }
+         else if(txtjqjzUserType_desc.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter Description!");
+             txtjqjzUserType_desc.requestFocus();
+         }
+         else{
+             try {
+                //intID = Integer.parseInt(txtID.getText());
+                strjqjzUserType_ID = txtjqjzUserType_ID.getText();
+                strjqjzUserType_name = txtjqjzUserType_name.getText();
+                strjqjzUserType_desc = txtjqjzUserType_desc.getText();
+                
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "SELECT COUNT(*) AS totRec FROM tbljqjz_usertype WHERE id=?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                jqjzpreparedStatement.setString(1,strjqjzUserType_ID);
+                jqjzrs = jqjzpreparedStatement.executeQuery();
+                
+                while (jqjzrs.next()) {
+                    jqjznumberOfRows = jqjzrs.getInt("totRec");
+                    //JOptionPane.showMessageDialog(null, numberOfRows);
+                }
+                if(jqjznumberOfRows == 1){
+                    JOptionPane.showMessageDialog(null, "Record Already Exist!");
+                }
+                else {
+                    String jqjzinsertTableSQL = "INSERT INTO tbljqjz_usertype"
+                    + "(id, name, description) VALUES"
+                    + "(?,?,?)";
+                    jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzinsertTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzUserType_ID);
+                    jqjzpreparedStatement.setString(2, strjqjzUserType_name);
+                    jqjzpreparedStatement.setString(3, strjqjzUserType_desc);
+                    // execute insert SQL stetement
+                    jqjzpreparedStatement .executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Saved!");
+                }
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnjqjzSave_usertypeMouseClicked
+
+    private void btnjqjzSave_usertypeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_usertypeMouseEntered
+        // TODO add your handling code here:
+        btnjqjzSave_usertype.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_usertypeMouseEntered
+
+    private void btnjqjzSave_usertypeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_usertypeMouseExited
+        // TODO add your handling code here:
+        btnjqjzSave_usertype.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzSave_usertypeMouseExited
+
+    private void btnjqjzSave_usertypeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_usertypeMousePressed
+        // TODO add your handling code here:
+        btnjqjzSave_usertype.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzSave_usertypeMousePressed
+
+    private void btnjqjzSave_usertypeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzSave_usertypeMouseReleased
+        // TODO add your handling code here:
+        btnjqjzSave_usertype.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzSave_usertypeMouseReleased
+
+    private void btnjqjzClear_usertypeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_usertypeMouseClicked
+        // TODO add your handling code here:
+        txtjqjzUserType_ID.setText("");
+        txtjqjzUserType_name.setText("");
+        txtjqjzUserType_desc.setText("");
+    }//GEN-LAST:event_btnjqjzClear_usertypeMouseClicked
+
+    private void btnjqjzClear_usertypeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_usertypeMouseEntered
+        // TODO add your handling code here:
+        btnjqjzClear_usertype.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_usertypeMouseEntered
+
+    private void btnjqjzClear_usertypeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_usertypeMouseExited
+        // TODO add your handling code here:
+        btnjqjzClear_usertype.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzClear_usertypeMouseExited
+
+    private void btnjqjzClear_usertypeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_usertypeMousePressed
+        // TODO add your handling code here:
+        btnjqjzClear_usertype.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzClear_usertypeMousePressed
+
+    private void btnjqjzClear_usertypeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzClear_usertypeMouseReleased
+        // TODO add your handling code here:
+        btnjqjzClear_usertype.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzClear_usertypeMouseReleased
+
+    private void btnjqjzUpdate_usertypeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_usertypeMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzUserType_ID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter User ID!");
+             txtjqjzUserType_ID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzUserType_ID = txtjqjzUserType_ID.getText();
+                strjqjzUserType_name = txtjqjzUserType_name.getText();
+                strjqjzUserType_desc = txtjqjzUserType_desc.getText();
+                
+                jqjzconn = jqjzC.makeConnection();
+                String jqjzupdateTableSQL = "UPDATE tbljqjz_usertype SET name = ?,description = ?"
+                        + "WHERE id = ?";
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzupdateTableSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzUserType_name);
+                    jqjzpreparedStatement.setString(2, strjqjzUserType_desc);
+                    jqjzpreparedStatement.setString(3, strjqjzUserType_ID);
+                    // execute update SQL stetement
+                    jqjzpreparedStatement.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Updated!");
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzUpdate_usertypeMouseClicked
+
+    private void btnjqjzUpdate_usertypeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_usertypeMouseEntered
+        // TODO add your handling code here:
+        btnjqjzUpdate_usertype.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_usertypeMouseEntered
+
+    private void btnjqjzUpdate_usertypeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_usertypeMouseExited
+        // TODO add your handling code here:
+        btnjqjzUpdate_usertype.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzUpdate_usertypeMouseExited
+
+    private void btnjqjzUpdate_usertypeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_usertypeMousePressed
+        // TODO add your handling code here:
+        btnjqjzUpdate_usertype.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzUpdate_usertypeMousePressed
+
+    private void btnjqjzUpdate_usertypeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzUpdate_usertypeMouseReleased
+        // TODO add your handling code here:
+        btnjqjzUpdate_usertype.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzUpdate_usertypeMouseReleased
+
+    private void btnjqjzDelete_usertypeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_usertypeMouseClicked
+        // TODO add your handling code here:
+        if(txtjqjzUserType_ID.getText().length() == 0){
+             JOptionPane.showMessageDialog(null,"Please Enter User ID!");
+             txtjqjzUserType_ID.requestFocus();
+        }
+        else{
+            try{
+                strjqjzUserType_ID = txtjqjzUserType_ID.getText();
+
+                jqjzconn = jqjzC.makeConnection();
+                jqjzstrSQL = "DELETE FROM tbljqjz_usertype WHERE id = ?";;
+                jqjzpreparedStatement = jqjzconn.prepareStatement(jqjzstrSQL);
+                    jqjzpreparedStatement.setString(1, strjqjzUserType_ID);
+                    // execute delete SQL stetement
+                    jqjzpreparedStatement .executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Record Successfully Deleted!");
+                    txtjqjzUserType_ID.setText("");
+                    txtjqjzUserType_name.setText("");
+                    txtjqjzUserType_desc.setText("");                 
+            }
+            catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+        } 
+    }//GEN-LAST:event_btnjqjzDelete_usertypeMouseClicked
+
+    private void btnjqjzDelete_usertypeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_usertypeMouseEntered
+        // TODO add your handling code here:
+        btnjqjzDelete_usertype.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_usertypeMouseEntered
+
+    private void btnjqjzDelete_usertypeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_usertypeMouseExited
+        // TODO add your handling code here:
+        btnjqjzDelete_usertype.setBackground(new java.awt.Color(178,121,74));
+    }//GEN-LAST:event_btnjqjzDelete_usertypeMouseExited
+
+    private void btnjqjzDelete_usertypeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_usertypeMousePressed
+        // TODO add your handling code here:
+        btnjqjzDelete_usertype.setBackground(new java.awt.Color(221, 150, 90));
+    }//GEN-LAST:event_btnjqjzDelete_usertypeMousePressed
+
+    private void btnjqjzDelete_usertypeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzDelete_usertypeMouseReleased
+        // TODO add your handling code here:
+        btnjqjzDelete_usertype.setBackground(new java.awt.Color(178,124,90));
+    }//GEN-LAST:event_btnjqjzDelete_usertypeMouseReleased
+
+    private void btnjqjzInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzInputMouseClicked
+        // TODO add your handling code here:
+        // Open jframe form "frmInputs"
+        try{
+            frmInputs jf = new frmInputs();
+        // Display jframe form "frmInputs" here
+        jf.show();
+        // Close current jframe form (frmInputs) after opening frmInputs
+        dispose();
+        }
+        catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+    }//GEN-LAST:event_btnjqjzInputMouseClicked
+
+    private void btnjqjzInputMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzInputMouseEntered
+        // TODO add your handling code here:
+        jPanel_Input.setBackground(new java.awt.Color(247,229,214));
+    }//GEN-LAST:event_btnjqjzInputMouseEntered
+
+    private void btnjqjzInputMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzInputMouseExited
+        // TODO add your handling code here:
+        jPanel_Input.setBackground(new java.awt.Color(235,218,204));
+    }//GEN-LAST:event_btnjqjzInputMouseExited
+
+    private void btnjqjzInputMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzInputMousePressed
+        // TODO add your handling code here:
+        jPanel_Input.setBackground(new java.awt.Color(219,172,132));
+    }//GEN-LAST:event_btnjqjzInputMousePressed
+
+    private void btnjqjzInputMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzInputMouseReleased
+        // TODO add your handling code here:
+        jPanel_Input.setBackground(new java.awt.Color(232,182,138));
+    }//GEN-LAST:event_btnjqjzInputMouseReleased
+
+    private void btnjqjzOutputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzOutputMouseClicked
+        // TODO add your handling code here:
+        // Open jframe form "frmdb"
+        frmdb jf = new frmdb();
+        // Display jframe form "frmdb" here
+        jf.show();
+        // Close current jframe form (frmdb) after opening frmdb
+        dispose();
+    }//GEN-LAST:event_btnjqjzOutputMouseClicked
+
+    private void btnjqjzOutputMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzOutputMouseEntered
+        // TODO add your handling code here:
+        jPanel_Output.setBackground(new java.awt.Color(247,229,214));
+    }//GEN-LAST:event_btnjqjzOutputMouseEntered
+
+    private void btnjqjzOutputMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzOutputMouseExited
+        // TODO add your handling code here:
+        jPanel_Output.setBackground(new java.awt.Color(235,218,204));
+    }//GEN-LAST:event_btnjqjzOutputMouseExited
+
+    private void btnjqjzOutputMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzOutputMousePressed
+        // TODO add your handling code here:
+        jPanel_Output.setBackground(new java.awt.Color(219,172,132));
+    }//GEN-LAST:event_btnjqjzOutputMousePressed
+
+    private void btnjqjzOutputMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzOutputMouseReleased
+        // TODO add your handling code here:
+        jPanel_Output.setBackground(new java.awt.Color(232,182,138));
+    }//GEN-LAST:event_btnjqjzOutputMouseReleased
+
+    private void btnjqjzHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzHomeMouseClicked
+        // TODO add your handling code here:
+        // Open jframe form "frmHomeJQJZ"
+        frmHomeJQJZ jf = new frmHomeJQJZ();
+        // Display jframe form "frmHomeJQJZ" here
+        jf.show();
+        // Close current jframe form (frmHomeJQJZ) after opening frmHomeJQJZ
+        dispose();
+    }//GEN-LAST:event_btnjqjzHomeMouseClicked
+
+    private void btnjqjzHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzHomeMouseEntered
+        // TODO add your handling code here:
+        jPanel_Home.setBackground(new java.awt.Color(247,229,214));
+    }//GEN-LAST:event_btnjqjzHomeMouseEntered
+
+    private void btnjqjzHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzHomeMouseExited
+        // TODO add your handling code here:
+        jPanel_Home.setBackground(new java.awt.Color(235,218,204));
+    }//GEN-LAST:event_btnjqjzHomeMouseExited
+
+    private void btnjqjzHomeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzHomeMousePressed
+        // TODO add your handling code here:
+        jPanel_Home.setBackground(new java.awt.Color(219,172,132));
+    }//GEN-LAST:event_btnjqjzHomeMousePressed
+
+    private void btnjqjzHomeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzHomeMouseReleased
+        // TODO add your handling code here:
+        jPanel_Home.setBackground(new java.awt.Color(232,182,138));
+    }//GEN-LAST:event_btnjqjzHomeMouseReleased
+
+    private void btnjqjzLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzLogoutMouseClicked
+        // TODO add your handling code here:
+        if (JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?", "Confirmation", JOptionPane.YES_NO_OPTION)==0);
+        // Open jframe form "frmLoginJQJZ"
+        try{
+            frmLoginJQJZ jf = new frmLoginJQJZ();
+        // Display jframe form "frmLoginJQJZ" here
+        jf.show();
+        // Close current jframe form (frmSignUpJQJZ) after opening frmLoginjqjz
+        dispose();
+        }
+        catch(SQLException jqjzE){
+                System.out.println("Failed");
+                jqjzE.printStackTrace();
+            }
+    }//GEN-LAST:event_btnjqjzLogoutMouseClicked
+
+    private void btnjqjzLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzLogoutMouseEntered
+        // TODO add your handling code here:
+        jPanel_Logout.setBackground(new java.awt.Color(247,229,214));
+    }//GEN-LAST:event_btnjqjzLogoutMouseEntered
+
+    private void btnjqjzLogoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzLogoutMouseExited
+        // TODO add your handling code here:
+        jPanel_Logout.setBackground(new java.awt.Color(235,218,204));
+    }//GEN-LAST:event_btnjqjzLogoutMouseExited
+
+    private void btnjqjzLogoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzLogoutMousePressed
+        // TODO add your handling code here:
+        jPanel_Logout.setBackground(new java.awt.Color(219,172,132));
+    }//GEN-LAST:event_btnjqjzLogoutMousePressed
+
+    private void btnjqjzLogoutMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzLogoutMouseReleased
+        // TODO add your handling code here:
+        jPanel_Logout.setBackground(new java.awt.Color(232,182,138));
+    }//GEN-LAST:event_btnjqjzLogoutMouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -3672,6 +7443,8 @@ public class frmInputs extends javax.swing.JFrame {
     private javax.swing.JLabel btnjqjzClear_eval;
     private javax.swing.JLabel btnjqjzClear_sal;
     private javax.swing.JLabel btnjqjzClear_train;
+    private javax.swing.JLabel btnjqjzClear_user;
+    private javax.swing.JLabel btnjqjzClear_usertype;
     private javax.swing.JLabel btnjqjzClear_vacay;
     private javax.swing.JLabel btnjqjzDelete_attend;
     private javax.swing.JLabel btnjqjzDelete_dep;
@@ -3679,13 +7452,22 @@ public class frmInputs extends javax.swing.JFrame {
     private javax.swing.JLabel btnjqjzDelete_eval;
     private javax.swing.JLabel btnjqjzDelete_sal;
     private javax.swing.JLabel btnjqjzDelete_train;
+    private javax.swing.JLabel btnjqjzDelete_user;
+    private javax.swing.JLabel btnjqjzDelete_usertype;
     private javax.swing.JLabel btnjqjzDelete_vacay;
+    private javax.swing.JLabel btnjqjzHome;
+    private javax.swing.JLabel btnjqjzInput;
+    private javax.swing.JLabel btnjqjzLogout;
+    private javax.swing.JLabel btnjqjzLogout1;
+    private javax.swing.JLabel btnjqjzOutput;
     private javax.swing.JLabel btnjqjzSave_attend;
     private javax.swing.JLabel btnjqjzSave_dep;
     private javax.swing.JLabel btnjqjzSave_emp;
     private javax.swing.JLabel btnjqjzSave_eval;
     private javax.swing.JLabel btnjqjzSave_sal;
     private javax.swing.JLabel btnjqjzSave_train;
+    private javax.swing.JLabel btnjqjzSave_user;
+    private javax.swing.JLabel btnjqjzSave_usertype;
     private javax.swing.JLabel btnjqjzSave_vacay;
     private javax.swing.JLabel btnjqjzSearch_attend;
     private javax.swing.JLabel btnjqjzSearch_dep;
@@ -3693,6 +7475,8 @@ public class frmInputs extends javax.swing.JFrame {
     private javax.swing.JLabel btnjqjzSearch_eval;
     private javax.swing.JLabel btnjqjzSearch_sal;
     private javax.swing.JLabel btnjqjzSearch_train;
+    private javax.swing.JLabel btnjqjzSearch_user;
+    private javax.swing.JLabel btnjqjzSearch_usertype;
     private javax.swing.JLabel btnjqjzSearch_vacay;
     private javax.swing.JLabel btnjqjzUpdate_attend;
     private javax.swing.JLabel btnjqjzUpdate_dep;
@@ -3700,12 +7484,40 @@ public class frmInputs extends javax.swing.JFrame {
     private javax.swing.JLabel btnjqjzUpdate_eval;
     private javax.swing.JLabel btnjqjzUpdate_sal;
     private javax.swing.JLabel btnjqjzUpdate_train;
+    private javax.swing.JLabel btnjqjzUpdate_user;
+    private javax.swing.JLabel btnjqjzUpdate_usertype;
     private javax.swing.JLabel btnjqjzUpdate_vacay;
-    private javax.swing.JLabel btnjqjz_attend;
+    private javax.swing.JLabel btnjqjz_Clear;
+    private javax.swing.JLabel btnjqjz_usertype;
+    private com.github.lgooddatepicker.components.DatePicker dtpjqjzSalLastUpdate;
+    private com.github.lgooddatepicker.components.DatePicker dtpjqjzVacayFrom;
+    private com.github.lgooddatepicker.components.DatePicker dtpjqjzVacayTo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
+    private javax.swing.JLabel jLabel107;
+    private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
+    private javax.swing.JLabel jLabel118;
+    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -3789,7 +7601,18 @@ public class frmInputs extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -3814,18 +7637,36 @@ public class frmInputs extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
+    private javax.swing.JPanel jPanel37;
+    private javax.swing.JPanel jPanel38;
+    private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel41;
+    private javax.swing.JPanel jPanel42;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanel_Home;
+    private javax.swing.JPanel jPanel_Input;
+    private javax.swing.JPanel jPanel_Logout;
+    private javax.swing.JPanel jPanel_Output;
     private javax.swing.JPanel jPanel_attend;
     private javax.swing.JPanel jPanel_dep;
     private javax.swing.JPanel jPanel_emp;
     private javax.swing.JPanel jPanel_eval;
+    private javax.swing.JPanel jPanel_logout1;
     private javax.swing.JPanel jPanel_salary;
     private javax.swing.JPanel jPanel_train;
+    private javax.swing.JPanel jPanel_user;
+    private javax.swing.JPanel jPanel_usertype;
     private javax.swing.JPanel jPanel_vacay;
     private javax.swing.JTabbedPane jTabbedPane1;
     private keeptoo.KGradientPanel kGradientPanel1;
@@ -3837,6 +7678,7 @@ public class frmInputs extends javax.swing.JFrame {
     private javax.swing.JLabel lblmenu_eval;
     private javax.swing.JLabel lblmenu_salary;
     private javax.swing.JLabel lblmenu_train;
+    private javax.swing.JLabel lblmenu_user;
     private javax.swing.JLabel lblmenu_vacay;
     private javax.swing.JPanel menu;
     private javax.swing.JPanel menu_attend;
@@ -3846,11 +7688,13 @@ public class frmInputs extends javax.swing.JFrame {
     private javax.swing.JPanel menu_eval;
     private javax.swing.JPanel menu_salary;
     private javax.swing.JPanel menu_train;
+    private javax.swing.JPanel menu_user;
     private javax.swing.JPanel menu_vacay;
     private javax.swing.JPasswordField pwjqjzEmpPass;
+    private javax.swing.JPasswordField pwjqjzUserPass;
     private javax.swing.JPanel toolbar;
+    private javax.swing.JTextField txtjqjzAttendDateTime;
     private javax.swing.JTextField txtjqjzAttendID;
-    private javax.swing.JTextField txtjqjzAttendTimeDate;
     private javax.swing.JTextField txtjqjzAttendType;
     private javax.swing.JTextField txtjqjzDepID;
     private javax.swing.JTextField txtjqjzDepTitle;
@@ -3867,15 +7711,23 @@ public class frmInputs extends javax.swing.JFrame {
     private javax.swing.JTextField txtjqjzSal;
     private javax.swing.JTextField txtjqjzSalBonus;
     private javax.swing.JTextField txtjqjzSalID;
-    private javax.swing.JPasswordField txtjqjzSalLastUpdate;
     private javax.swing.JTextField txtjqjzSalLoan;
     private javax.swing.JTextField txtjqjzTrainDescription;
     private javax.swing.JTextField txtjqjzTrainID;
     private javax.swing.JTextField txtjqjzTrainTitle;
+    private javax.swing.JTextField txtjqjzUserEmail;
+    private javax.swing.JTextField txtjqjzUserFName;
+    private javax.swing.JTextField txtjqjzUserGender;
     private javax.swing.JTextField txtjqjzUserID;
-    private javax.swing.JTextField txtjqjzVacayFrom;
+    private javax.swing.JTextField txtjqjzUserID_user;
+    private javax.swing.JTextField txtjqjzUserLName;
+    private javax.swing.JTextField txtjqjzUserMName;
+    private javax.swing.JTextField txtjqjzUserTypeID;
+    private javax.swing.JTextField txtjqjzUserType_ID;
+    private javax.swing.JTextField txtjqjzUserType_desc;
+    private javax.swing.JTextField txtjqjzUserType_name;
+    private javax.swing.JTextField txtjqjzUsername;
     private javax.swing.JTextField txtjqjzVacayID;
     private javax.swing.JTextField txtjqjzVacayTitle;
-    private javax.swing.JPasswordField txtjqjzVacayTo;
     // End of variables declaration//GEN-END:variables
 }
