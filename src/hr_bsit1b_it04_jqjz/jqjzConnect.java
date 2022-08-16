@@ -8,7 +8,7 @@ import com.mysql.jdbc.Driver;
 import java.sql.*;
 /**
  *
- * @author JLZapanta;
+ * @author JQJZ;
  */
 public class jqjzConnect {
     //Create object for connection class

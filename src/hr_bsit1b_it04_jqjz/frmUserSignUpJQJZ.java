@@ -12,7 +12,7 @@ import hr_bsit1b_it04_jqjz.jqjzConnect;
 import java.awt.Color;
 /**
  *
- * @author JLZapanta;
+ * @author JQJZ;
  */
 public class frmUserSignUpJQJZ extends javax.swing.JFrame {
     private Statement jqjzstatement;

@@ -6,10 +6,12 @@
 package hr_bsit1b_it04_jqjz;
 
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
- * @author JLZapanta;
+ * @author JQJZ;
  */
 public class frmHomeJQJZ extends javax.swing.JFrame {
 
@@ -227,12 +229,16 @@ public class frmHomeJQJZ extends javax.swing.JFrame {
     }//GEN-LAST:event_btnjqjz_inputDashBoardMouseReleased
 
     private void btnjqjz_recordDashBoardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_recordDashBoardMouseClicked
-        // TODO add your handling code here:
-        frmdb jf = new frmdb();
-        // Display jframe form "frmLoginJQJZ" here
-        jf.show();
-        // Close current jframe form (frmInputs) after opening frmInputs
-        dispose();
+        try {
+            // TODO add your handling code here:
+            frmTableJQJZ jf = new frmTableJQJZ();
+            // Display jframe form "frmTableJQJZ" here
+            jf.show();
+            // Close current jframe form (frmTableJQJZ) after opening frmTableJQJZ
+            dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(frmHomeJQJZ.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnjqjz_recordDashBoardMouseClicked
 
     private void btnjqjz_recordDashBoardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjz_recordDashBoardMouseEntered

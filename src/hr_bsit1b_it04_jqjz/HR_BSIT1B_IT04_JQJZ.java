@@ -7,7 +7,7 @@ package hr_bsit1b_it04_jqjz;
 
 /**
  *
- * @author JLZapanta;
+ * @author JQJZ;
  */
 public class HR_BSIT1B_IT04_JQJZ {
 

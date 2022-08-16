@@ -373,9 +373,9 @@ public class frmInputs extends javax.swing.JFrame {
 
         menu_db.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_db.setText("INPUT DASHBOARD");
         lblmenu_db.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblmenu_db.setForeground(new java.awt.Color(153, 102, 0));
+        lblmenu_db.setText("INPUT DASHBOARD");
         lblmenu_db.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_dbMouseClicked(evt);
@@ -413,10 +413,10 @@ public class frmInputs extends javax.swing.JFrame {
 
         menu_emp.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_emp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/emp.png"))); // NOI18N
-        lblmenu_emp.setText("   EMPLOYEE");
         lblmenu_emp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblmenu_emp.setForeground(new java.awt.Color(153, 102, 0));
+        lblmenu_emp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/emp.png"))); // NOI18N
+        lblmenu_emp.setText("   EMPLOYEE");
         lblmenu_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_empMouseClicked(evt);
@@ -454,10 +454,10 @@ public class frmInputs extends javax.swing.JFrame {
 
         menu_dep.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_dep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/dept.png"))); // NOI18N
-        lblmenu_dep.setText("   DEPARTMENT ");
         lblmenu_dep.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblmenu_dep.setForeground(new java.awt.Color(153, 102, 0));
+        lblmenu_dep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/dept.png"))); // NOI18N
+        lblmenu_dep.setText("   DEPARTMENT ");
         lblmenu_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_depMouseClicked(evt);
@@ -495,10 +495,10 @@ public class frmInputs extends javax.swing.JFrame {
 
         menu_train.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_train.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/train.png"))); // NOI18N
-        lblmenu_train.setText("   TRAINING");
         lblmenu_train.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblmenu_train.setForeground(new java.awt.Color(153, 102, 0));
+        lblmenu_train.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/train.png"))); // NOI18N
+        lblmenu_train.setText("   TRAINING");
         lblmenu_train.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_trainMouseClicked(evt);
@@ -536,10 +536,10 @@ public class frmInputs extends javax.swing.JFrame {
 
         menu_vacay.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_vacay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/vacay.png"))); // NOI18N
-        lblmenu_vacay.setText("   VACATION");
         lblmenu_vacay.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblmenu_vacay.setForeground(new java.awt.Color(153, 102, 0));
+        lblmenu_vacay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/vacay.png"))); // NOI18N
+        lblmenu_vacay.setText("   VACATION");
         lblmenu_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_vacayMouseClicked(evt);
@@ -577,10 +577,10 @@ public class frmInputs extends javax.swing.JFrame {
 
         menu_salary.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_salary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/cash.png"))); // NOI18N
-        lblmenu_salary.setText("   SALARY");
         lblmenu_salary.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblmenu_salary.setForeground(new java.awt.Color(153, 102, 0));
+        lblmenu_salary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/cash.png"))); // NOI18N
+        lblmenu_salary.setText("   SALARY");
         lblmenu_salary.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_salaryMouseClicked(evt);
@@ -618,10 +618,10 @@ public class frmInputs extends javax.swing.JFrame {
 
         menu_attend.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_attend.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/attend.png"))); // NOI18N
-        lblmenu_attend.setText("   ATTENDANCE");
         lblmenu_attend.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblmenu_attend.setForeground(new java.awt.Color(153, 102, 0));
+        lblmenu_attend.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/attend.png"))); // NOI18N
+        lblmenu_attend.setText("   ATTENDANCE");
         lblmenu_attend.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_attendMouseClicked(evt);
@@ -659,10 +659,10 @@ public class frmInputs extends javax.swing.JFrame {
 
         menu_eval.setBackground(new java.awt.Color(235, 218, 204));
 
-        lblmenu_eval.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/eval.png"))); // NOI18N
-        lblmenu_eval.setText("  EVALUATION");
         lblmenu_eval.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblmenu_eval.setForeground(new java.awt.Color(153, 102, 0));
+        lblmenu_eval.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/eval.png"))); // NOI18N
+        lblmenu_eval.setText("  EVALUATION");
         lblmenu_eval.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmenu_evalMouseClicked(evt);
@@ -775,10 +775,15 @@ public class frmInputs extends javax.swing.JFrame {
                 .addComponent(menu_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menu_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(menu_dep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(menu_train, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(menu_vacay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(menu_salary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(menu_attend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menu_eval, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -999,22 +1004,22 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
-        jLabel6.setText("Employee Information");
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(159, 105, 61));
+        jLabel6.setText("Employee Information");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzEmpName.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzEmpName.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzEmpName.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzEmpName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzEmpName.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/user.png"))); // NOI18N
 
-        jLabel7.setText("Employee Name");
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel7.setText("Employee Name");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1043,16 +1048,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzEmpID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzEmpID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzEmpID.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzEmpID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzEmpID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
-        jLabel9.setText("Employee ID");
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel9.setText("Employee ID");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1080,16 +1085,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpAddress.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzEmpAddress.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzEmpAddress.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzEmpAddress.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzEmpAddress.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzEmpAddress.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/address.png"))); // NOI18N
 
-        jLabel11.setText("Employee Address");
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel11.setText("Employee Address");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1118,16 +1123,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpMobile.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzEmpMobile.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzEmpMobile.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzEmpMobile.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzEmpMobile.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzEmpMobile.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/phone.png"))); // NOI18N
 
-        jLabel13.setText("Employee Mobile");
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel13.setText("Employee Mobile");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1155,16 +1160,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzEmpEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzEmpEmail.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzEmpEmail.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzEmpEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzEmpEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/email.png"))); // NOI18N
 
-        jLabel15.setText("Employee Email");
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel15.setText("Employee Email");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -1194,13 +1199,13 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/password.png"))); // NOI18N
 
-        jLabel17.setText("Employee Password");
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel17.setText("Employee Password");
 
+        pwjqjzEmpPass.setForeground(new java.awt.Color(178, 121, 74));
         pwjqjzEmpPass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pwjqjzEmpPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
-        pwjqjzEmpPass.setForeground(new java.awt.Color(178, 121, 74));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1226,11 +1231,11 @@ public class frmInputs extends javax.swing.JFrame {
                     .addComponent(pwjqjzEmpPass)))
         );
 
-        btnjqjzSearch_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_emp.setText("Search Record");
         btnjqjzSearch_emp.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_emp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_emp.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSearch_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_emp.setText("Search Record");
         btnjqjzSearch_emp.setOpaque(true);
         btnjqjzSearch_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1250,11 +1255,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzSave_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_emp.setText(" Save Record");
         btnjqjzSave_emp.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_emp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_emp.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSave_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_emp.setText(" Save Record");
         btnjqjzSave_emp.setOpaque(true);
         btnjqjzSave_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1274,11 +1279,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzUpdate_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_emp.setText("Update Record");
         btnjqjzUpdate_emp.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_emp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_emp.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzUpdate_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_emp.setText("Update Record");
         btnjqjzUpdate_emp.setOpaque(true);
         btnjqjzUpdate_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1298,11 +1303,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzClear_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_emp.setText("Clear Entries");
         btnjqjzClear_emp.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_emp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_emp.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzClear_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_emp.setText("Clear Entries");
         btnjqjzClear_emp.setOpaque(true);
         btnjqjzClear_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1322,11 +1327,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzDelete_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_emp.setText("Delete Record");
         btnjqjzDelete_emp.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_emp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_emp.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzDelete_emp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_emp.setText("Delete Record");
         btnjqjzDelete_emp.setOpaque(true);
         btnjqjzDelete_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1437,23 +1442,23 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("Department Information");
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(159, 105, 61));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("Department Information");
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
-        txtjqjzDepID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzDepID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzDepID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzDepID.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzDepID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzDepID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
-        jLabel24.setText("Department ID");
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel24.setText("Department ID");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1484,14 +1489,14 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/dept_title.png"))); // NOI18N
 
-        txtjqjzDepTitle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzDepTitle.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzDepTitle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzDepTitle.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzDepTitle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzDepTitle.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
-        jLabel26.setText("Department Title");
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel26.setText("Department Title");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1518,11 +1523,11 @@ public class frmInputs extends javax.swing.JFrame {
                     .addComponent(txtjqjzDepTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        btnjqjzSearch_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_dep.setText("Search Record");
         btnjqjzSearch_dep.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_dep.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_dep.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSearch_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_dep.setText("Search Record");
         btnjqjzSearch_dep.setOpaque(true);
         btnjqjzSearch_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1542,11 +1547,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzSave_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_dep.setText("Save Record");
         btnjqjzSave_dep.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_dep.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_dep.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSave_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_dep.setText("Save Record");
         btnjqjzSave_dep.setOpaque(true);
         btnjqjzSave_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1566,11 +1571,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzClear_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_dep.setText("Clear Entries");
         btnjqjzClear_dep.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_dep.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_dep.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzClear_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_dep.setText("Clear Entries");
         btnjqjzClear_dep.setOpaque(true);
         btnjqjzClear_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1590,11 +1595,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzUpdate_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_dep.setText("Update Record");
         btnjqjzUpdate_dep.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_dep.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_dep.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzUpdate_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_dep.setText("Update Record");
         btnjqjzUpdate_dep.setOpaque(true);
         btnjqjzUpdate_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1614,11 +1619,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzDelete_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_dep.setText("Delete Record");
         btnjqjzDelete_dep.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_dep.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_dep.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzDelete_dep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_dep.setText("Delete Record");
         btnjqjzDelete_dep.setOpaque(true);
         btnjqjzDelete_dep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1708,23 +1713,23 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("Training Information");
         jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(159, 105, 61));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("Training Information");
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
-        txtjqjzTrainID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzTrainID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzTrainID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzTrainID.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzTrainID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzTrainID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
-        jLabel32.setText("Training ID");
         jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel32.setText("Training ID");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -1755,14 +1760,14 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/train_title.png"))); // NOI18N
 
-        txtjqjzTrainTitle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzTrainTitle.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzTrainTitle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzTrainTitle.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzTrainTitle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzTrainTitle.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
-        jLabel34.setText("Training Title");
         jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel34.setText("Training Title");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -1789,11 +1794,11 @@ public class frmInputs extends javax.swing.JFrame {
                     .addComponent(txtjqjzTrainTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        btnjqjzSearch_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_train.setText("Search Record");
         btnjqjzSearch_train.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_train.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_train.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSearch_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_train.setText("Search Record");
         btnjqjzSearch_train.setOpaque(true);
         btnjqjzSearch_train.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1813,11 +1818,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzSave_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_train.setText("Save Record");
         btnjqjzSave_train.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_train.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_train.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSave_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_train.setText("Save Record");
         btnjqjzSave_train.setOpaque(true);
         btnjqjzSave_train.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1837,11 +1842,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzClear_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_train.setText("Clear Entries");
         btnjqjzClear_train.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_train.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_train.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzClear_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_train.setText("Clear Entries");
         btnjqjzClear_train.setOpaque(true);
         btnjqjzClear_train.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1861,11 +1866,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzUpdate_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_train.setText("Update Record");
         btnjqjzUpdate_train.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_train.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_train.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzUpdate_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_train.setText("Update Record");
         btnjqjzUpdate_train.setOpaque(true);
         btnjqjzUpdate_train.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1885,11 +1890,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzDelete_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_train.setText("Delete Record");
         btnjqjzDelete_train.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_train.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_train.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzDelete_train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_train.setText("Delete Record");
         btnjqjzDelete_train.setOpaque(true);
         btnjqjzDelete_train.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1913,14 +1918,14 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/train_desc.png"))); // NOI18N
 
-        txtjqjzTrainDescription.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzTrainDescription.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzTrainDescription.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzTrainDescription.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzTrainDescription.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzTrainDescription.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
-        jLabel36.setText("Training Description");
         jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel36.setText("Training Description");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -2020,22 +2025,22 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
-        jLabel39.setText("Vacation Information");
         jLabel39.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(159, 105, 61));
+        jLabel39.setText("Vacation Information");
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzVacayID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzVacayID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzVacayID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzVacayID.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzVacayID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzVacayID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/suitcase.png"))); // NOI18N
 
-        jLabel41.setText("Vacation ID");
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel41.setText("Vacation ID");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -2064,16 +2069,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpID_vacay.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzEmpID_vacay.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzEmpID_vacay.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzEmpID_vacay.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzEmpID_vacay.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzEmpID_vacay.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
-        jLabel43.setText("Employee ID");
         jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel43.setText("Employee ID");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -2101,16 +2106,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzVacayTitle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzVacayTitle.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzVacayTitle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzVacayTitle.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzVacayTitle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzVacayTitle.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/notes.png"))); // NOI18N
 
-        jLabel45.setText("Vacation Title");
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel45.setText("Vacation Title");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -2141,9 +2146,9 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/calendar.png"))); // NOI18N
 
-        jLabel49.setText("Vacation from date (mm/dd/yy)");
         jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel49.setText("Vacation from date (mm/dd/yy)");
 
         dtpjqjzVacayFrom.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         dtpjqjzVacayFrom.setForeground(new java.awt.Color(178, 121, 74));
@@ -2178,9 +2183,9 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/calendar.png"))); // NOI18N
 
-        jLabel51.setText("Vacation to date (mm/dd/yy)");
         jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel51.setText("Vacation to date (mm/dd/yy)");
 
         dtpjqjzVacayTo.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         dtpjqjzVacayTo.setForeground(new java.awt.Color(178, 121, 74));
@@ -2211,11 +2216,11 @@ public class frmInputs extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnjqjzSearch_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_vacay.setText("Search Record");
         btnjqjzSearch_vacay.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_vacay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_vacay.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSearch_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_vacay.setText("Search Record");
         btnjqjzSearch_vacay.setOpaque(true);
         btnjqjzSearch_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2235,11 +2240,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzSave_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_vacay.setText(" Save Record");
         btnjqjzSave_vacay.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_vacay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_vacay.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSave_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_vacay.setText(" Save Record");
         btnjqjzSave_vacay.setOpaque(true);
         btnjqjzSave_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2259,11 +2264,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzUpdate_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_vacay.setText("Update Record");
         btnjqjzUpdate_vacay.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_vacay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_vacay.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzUpdate_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_vacay.setText("Update Record");
         btnjqjzUpdate_vacay.setOpaque(true);
         btnjqjzUpdate_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2283,11 +2288,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzClear_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_vacay.setText("Clear Entries");
         btnjqjzClear_vacay.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_vacay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_vacay.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzClear_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_vacay.setText("Clear Entries");
         btnjqjzClear_vacay.setOpaque(true);
         btnjqjzClear_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2307,11 +2312,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzDelete_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_vacay.setText("Delete Record");
         btnjqjzDelete_vacay.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_vacay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_vacay.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzDelete_vacay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_vacay.setText("Delete Record");
         btnjqjzDelete_vacay.setOpaque(true);
         btnjqjzDelete_vacay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2416,22 +2421,22 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
-        jLabel53.setText("Salary Information");
         jLabel53.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(159, 105, 61));
+        jLabel53.setText("Salary Information");
 
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzSalID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzSalID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzSalID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzSalID.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzSalID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzSalID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/sal_id.png"))); // NOI18N
 
-        jLabel55.setText("Salary ID ");
         jLabel55.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel55.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel55.setText("Salary ID ");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -2460,16 +2465,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpID_sal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzEmpID_sal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzEmpID_sal.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzEmpID_sal.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzEmpID_sal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzEmpID_sal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
-        jLabel57.setText("Employee ID");
         jLabel57.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel57.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel57.setText("Employee ID");
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -2497,16 +2502,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel21.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzSal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzSal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzSal.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzSal.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzSal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzSal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel58.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/salary.png"))); // NOI18N
 
-        jLabel59.setText("Salary");
         jLabel59.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel59.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel59.setText("Salary");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -2535,16 +2540,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel22.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzSalBonus.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzSalBonus.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzSalBonus.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzSalBonus.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzSalBonus.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzSalBonus.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/bonus.png"))); // NOI18N
 
-        jLabel61.setText("Bonus");
         jLabel61.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel61.setText("Bonus");
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
@@ -2573,16 +2578,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel23.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzSalLoan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzSalLoan.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzSalLoan.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzSalLoan.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzSalLoan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzSalLoan.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/loan.png"))); // NOI18N
 
-        jLabel63.setText("Loan");
         jLabel63.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel63.setText("Loan");
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -2613,9 +2618,9 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/calendar.png"))); // NOI18N
 
-        jLabel65.setText("Last Update");
         jLabel65.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel65.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel65.setText("Last Update");
 
         dtpjqjzSalLastUpdate.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         dtpjqjzSalLastUpdate.setForeground(new java.awt.Color(178, 121, 74));
@@ -2646,11 +2651,11 @@ public class frmInputs extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnjqjzSearch_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_sal.setText("Search Record");
         btnjqjzSearch_sal.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_sal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_sal.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSearch_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_sal.setText("Search Record");
         btnjqjzSearch_sal.setOpaque(true);
         btnjqjzSearch_sal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2670,11 +2675,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzSave_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_sal.setText(" Save Record");
         btnjqjzSave_sal.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_sal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_sal.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSave_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_sal.setText(" Save Record");
         btnjqjzSave_sal.setOpaque(true);
         btnjqjzSave_sal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2694,11 +2699,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzUpdate_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_sal.setText("Update Record");
         btnjqjzUpdate_sal.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_sal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_sal.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzUpdate_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_sal.setText("Update Record");
         btnjqjzUpdate_sal.setOpaque(true);
         btnjqjzUpdate_sal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2718,11 +2723,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzClear_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_sal.setText("Clear Entries");
         btnjqjzClear_sal.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_sal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_sal.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzClear_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_sal.setText("Clear Entries");
         btnjqjzClear_sal.setOpaque(true);
         btnjqjzClear_sal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2742,11 +2747,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzDelete_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_sal.setText("Delete Record");
         btnjqjzDelete_sal.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_sal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_sal.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzDelete_sal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_sal.setText("Delete Record");
         btnjqjzDelete_sal.setOpaque(true);
         btnjqjzDelete_sal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2855,22 +2860,22 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
-        jLabel69.setText("Attendance Information");
         jLabel69.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel69.setForeground(new java.awt.Color(159, 105, 61));
+        jLabel69.setText("Attendance Information");
 
         jPanel25.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzEmpID_attend.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzEmpID_attend.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzEmpID_attend.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzEmpID_attend.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzEmpID_attend.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzEmpID_attend.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
-        jLabel71.setText("Employee ID ");
         jLabel71.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel71.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel71.setText("Employee ID ");
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -2898,16 +2903,16 @@ public class frmInputs extends javax.swing.JFrame {
 
         jPanel26.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtjqjzAttendID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzAttendID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzAttendID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzAttendID.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzAttendID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzAttendID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/attend_id.png"))); // NOI18N
 
-        jLabel73.setText("Attendance ID");
         jLabel73.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel73.setText("Attendance ID");
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -2938,9 +2943,9 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/attend_type.png"))); // NOI18N
 
-        jLabel77.setText("Attendance Type");
         jLabel77.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel77.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel77.setText("Attendance Type");
 
         txtjqjzAttendType.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzAttendType.setForeground(new java.awt.Color(178, 121, 74));
@@ -2977,14 +2982,14 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/timedate.png"))); // NOI18N
 
-        jLabel79.setText("Attendance date and time (yyyy-mm--dd hh:mm:ss)");
         jLabel79.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel79.setText("Attendance date and time (yyyy-mm--dd hh:mm:ss)");
 
-        txtjqjzAttendDateTime.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzAttendDateTime.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzAttendDateTime.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzAttendDateTime.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzAttendDateTime.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzAttendDateTime.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -3013,11 +3018,11 @@ public class frmInputs extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnjqjzSearch_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_attend.setText("Search Record");
         btnjqjzSearch_attend.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_attend.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_attend.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSearch_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_attend.setText("Search Record");
         btnjqjzSearch_attend.setOpaque(true);
         btnjqjzSearch_attend.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3037,11 +3042,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzSave_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_attend.setText(" Save Record");
         btnjqjzSave_attend.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_attend.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_attend.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSave_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_attend.setText(" Save Record");
         btnjqjzSave_attend.setOpaque(true);
         btnjqjzSave_attend.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3061,11 +3066,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzUpdate_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_attend.setText("Update Record");
         btnjqjzUpdate_attend.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_attend.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_attend.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzUpdate_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_attend.setText("Update Record");
         btnjqjzUpdate_attend.setOpaque(true);
         btnjqjzUpdate_attend.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3085,11 +3090,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjz_Clear.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjz_Clear.setText("Clear Entries");
         btnjqjz_Clear.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjz_Clear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjz_Clear.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjz_Clear.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjz_Clear.setText("Clear Entries");
         btnjqjz_Clear.setOpaque(true);
         btnjqjz_Clear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3109,11 +3114,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzDelete_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_attend.setText("Delete Record");
         btnjqjzDelete_attend.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_attend.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_attend.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzDelete_attend.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_attend.setText("Delete Record");
         btnjqjzDelete_attend.setOpaque(true);
         btnjqjzDelete_attend.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3218,23 +3223,23 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel80.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/company2_trsp.png"))); // NOI18N
 
-        jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel81.setText("Evaluation Information");
         jLabel81.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(159, 105, 61));
+        jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel81.setText("Evaluation Information");
 
         jPanel27.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel83.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/id.png"))); // NOI18N
 
-        txtjqjzEvalID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzEvalID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzEvalID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzEvalID.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzEvalID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzEvalID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
-        jLabel84.setText("Evaluation ID");
         jLabel84.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel84.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel84.setText("Evaluation ID");
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -3265,14 +3270,14 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel85.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/user.png"))); // NOI18N
 
-        txtjqjzUserID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzUserID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzUserID.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzUserID.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzUserID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzUserID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
-        jLabel86.setText("User ID");
         jLabel86.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel86.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel86.setText("User ID");
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -3299,11 +3304,11 @@ public class frmInputs extends javax.swing.JFrame {
                     .addComponent(txtjqjzUserID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        btnjqjzSearch_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSearch_eval.setText("Search Record");
         btnjqjzSearch_eval.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSearch_eval.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSearch_eval.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSearch_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSearch_eval.setText("Search Record");
         btnjqjzSearch_eval.setOpaque(true);
         btnjqjzSearch_eval.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3323,11 +3328,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzSave_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzSave_eval.setText("Save Record");
         btnjqjzSave_eval.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzSave_eval.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzSave_eval.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzSave_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzSave_eval.setText("Save Record");
         btnjqjzSave_eval.setOpaque(true);
         btnjqjzSave_eval.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3347,11 +3352,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzClear_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzClear_eval.setText("Clear Entries");
         btnjqjzClear_eval.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzClear_eval.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzClear_eval.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzClear_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzClear_eval.setText("Clear Entries");
         btnjqjzClear_eval.setOpaque(true);
         btnjqjzClear_eval.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3371,11 +3376,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzUpdate_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzUpdate_eval.setText("Update Record");
         btnjqjzUpdate_eval.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzUpdate_eval.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzUpdate_eval.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzUpdate_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzUpdate_eval.setText("Update Record");
         btnjqjzUpdate_eval.setOpaque(true);
         btnjqjzUpdate_eval.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3395,11 +3400,11 @@ public class frmInputs extends javax.swing.JFrame {
             }
         });
 
-        btnjqjzDelete_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnjqjzDelete_eval.setText("Delete Record");
         btnjqjzDelete_eval.setBackground(new java.awt.Color(178, 121, 74));
         btnjqjzDelete_eval.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnjqjzDelete_eval.setForeground(new java.awt.Color(255, 255, 255));
+        btnjqjzDelete_eval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnjqjzDelete_eval.setText("Delete Record");
         btnjqjzDelete_eval.setOpaque(true);
         btnjqjzDelete_eval.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3423,14 +3428,14 @@ public class frmInputs extends javax.swing.JFrame {
 
         jLabel87.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hr_bsit1b_it04_jqjz/images/eval_value.png"))); // NOI18N
 
-        txtjqjzEvalValue.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtjqjzEvalValue.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
         txtjqjzEvalValue.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtjqjzEvalValue.setForeground(new java.awt.Color(178, 121, 74));
+        txtjqjzEvalValue.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtjqjzEvalValue.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(178, 121, 74)));
 
-        jLabel88.setText("Evaluation Value");
         jLabel88.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel88.setForeground(new java.awt.Color(178, 121, 74));
+        jLabel88.setText("Evaluation Value");
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -7302,13 +7307,16 @@ public class frmInputs extends javax.swing.JFrame {
     }//GEN-LAST:event_btnjqjzInputMouseReleased
 
     private void btnjqjzOutputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzOutputMouseClicked
-        // TODO add your handling code here:
-        // Open jframe form "frmdb"
-        frmdb jf = new frmdb();
-        // Display jframe form "frmdb" here
-        jf.show();
-        // Close current jframe form (frmdb) after opening frmdb
-        dispose();
+        try {
+            // Open jframe form "frmTableJQJZ"
+            frmTableJQJZ jf = new frmTableJQJZ();
+            // Display jframe form "frmTableJQJZ" here
+            jf.show();
+            // Close current jframe form (frmTableJQJZ) after frmTableJQJZ
+            dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(frmInputs.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnjqjzOutputMouseClicked
 
     private void btnjqjzOutputMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjqjzOutputMouseEntered
@@ -7458,7 +7466,6 @@ public class frmInputs extends javax.swing.JFrame {
     private javax.swing.JLabel btnjqjzHome;
     private javax.swing.JLabel btnjqjzInput;
     private javax.swing.JLabel btnjqjzLogout;
-    private javax.swing.JLabel btnjqjzLogout1;
     private javax.swing.JLabel btnjqjzOutput;
     private javax.swing.JLabel btnjqjzSave_attend;
     private javax.swing.JLabel btnjqjzSave_dep;
@@ -7662,7 +7669,6 @@ public class frmInputs extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_dep;
     private javax.swing.JPanel jPanel_emp;
     private javax.swing.JPanel jPanel_eval;
-    private javax.swing.JPanel jPanel_logout1;
     private javax.swing.JPanel jPanel_salary;
     private javax.swing.JPanel jPanel_train;
     private javax.swing.JPanel jPanel_user;
